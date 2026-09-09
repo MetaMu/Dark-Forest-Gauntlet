@@ -1,0 +1,9 @@
+.godot/
+*.tmp
+tools/godot/
+tools/godot.zip
+artifacts/
+reference/*
+!reference/.gdignore
+Character Sprites/*
+!Character Sprites/.gdignore
