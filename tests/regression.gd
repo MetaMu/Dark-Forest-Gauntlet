@@ -97,7 +97,7 @@ func run() -> void:
 	player.position = room.encounter.reward_position
 	room.encounter.advance(0.0)
 	check(room.encounter.state == room.encounter.State.EXIT and room.encounter.gate.collision_layer == 0, "pear collection opens physical gate")
-	player.position = Vector3(0, 0, -10.5)
+	player.position = Vector3(0, 0, room.encounter.EXIT_Z - 0.5)
 	room.encounter.advance(0.0)
 	check(room.encounter.state == room.encounter.State.WON, "survivor reaching exit wins")
 	check(not player.combat_enabled and not player.is_physics_processing(), "win freezes gameplay")
@@ -151,10 +151,10 @@ func run() -> void:
 	room.encounter.advance(0.0)
 	player.position = room.encounter.reward_position
 	room.encounter.advance(0.0)
-	player.position = Vector3(0, 0, -10.5)
+	player.position = Vector3(0, 0, room.encounter.EXIT_Z - 0.5)
 	room.encounter.advance(0.0)
 	check(room.encounter.state == room.encounter.State.EXIT, "exit waits for every survivor")
-	ally.position = Vector3(0.5, 0, -10.5)
+	ally.position = Vector3(0.5, 0, room.encounter.EXIT_Z - 0.5)
 	room.encounter.advance(0.0)
 	check(room.encounter.state == room.encounter.State.WON, "full surviving party completes encounter")
 	room.free()

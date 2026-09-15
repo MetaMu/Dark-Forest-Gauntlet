@@ -1,0 +1,122 @@
+[
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\axe_bronze.glb",
+    "triangles": 826,
+    "blender_triangles": 826,
+    "bytes": 3467392,
+    "sha256": "f49ad957d36dbf6f72cdef0a0331a9e33ab64a0aca2ae2bb9081391135f1232f",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\sword_bronze.glb",
+    "triangles": 1540,
+    "blender_triangles": 1540,
+    "bytes": 3508972,
+    "sha256": "6dc00f7f1da9b91b0cd668bc6afd1e55d0bc99f3e47baa4ce0cf60076267b416",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\shield_wooden.glb",
+    "triangles": 1404,
+    "blender_triangles": 1404,
+    "bytes": 8729484,
+    "sha256": "f14565decd4cdb1edfd14780f7e12f8a5c84dd23cd7326054312ac18b5ab50c1",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\torch_metal.glb",
+    "triangles": 970,
+    "blender_triangles": 970,
+    "bytes": 2519340,
+    "sha256": "1fb3699688dc81e723093a20c266c409c2aa9e9281902b54b49373bb50cd12c7",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\lantern_wall.glb",
+    "triangles": 2822,
+    "blender_triangles": 2822,
+    "bytes": 2601144,
+    "sha256": "8880ea94f3e2696d82f720531205612808c362224aa33432b9a53ad0c323a13a",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\chest_wood.glb",
+    "triangles": 2546,
+    "blender_triangles": 2626,
+    "bytes": 5357360,
+    "sha256": "32807fbb53bdab66b7eea184e53cfe91c401e33124f9e8cd43e5110f29872582",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\barrel.glb",
+    "triangles": 824,
+    "blender_triangles": 824,
+    "bytes": 5289968,
+    "sha256": "d6988b2bf55bf3b681e7fbe1e4b10131e87b3e5beef18eeaa0b12adfb84efab0",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\crate_wooden.glb",
+    "triangles": 1576,
+    "blender_triangles": 1576,
+    "bytes": 5299392,
+    "sha256": "9a59133c3bd32e4098d2cb26b1a0841b5917850114daf36a398d5fdfe9a3eaec",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\weaponstand.glb",
+    "triangles": 2084,
+    "blender_triangles": 2084,
+    "bytes": 5304056,
+    "sha256": "213d6fbf2c8aac2e726ba15e2d9a681300237d1992842af6f47c23342ec37dbb",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\cauldron.glb",
+    "triangles": 2020,
+    "blender_triangles": 2020,
+    "bytes": 2542920,
+    "sha256": "8cd1eb5b0c0927b1e33dcf92b0f9075b76487ba8156980b0aa532934972b7fde",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\potion_1.glb",
+    "triangles": 440,
+    "blender_triangles": 440,
+    "bytes": 3452856,
+    "sha256": "b85ebcf2c7e889cfbbc385b35acb8f2704e7a6dc6586af49a15df38236378e90",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\book_7.glb",
+    "triangles": 724,
+    "blender_triangles": 724,
+    "bytes": 5948416,
+    "sha256": "d5fdd2724a14d559b9be6c49f5fa361c530f4e2470053a39e61ffeaa02e0a92f",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\banner_1.glb",
+    "triangles": 448,
+    "blender_triangles": 448,
+    "bytes": 7505468,
+    "sha256": "e6ab8c601b194178c82e237f192ecbc034b3f3388a503d343f382a503078fe29",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\anvil_log.glb",
+    "triangles": 3808,
+    "blender_triangles": 3808,
+    "bytes": 8791992,
+    "sha256": "2e9bf2537c571e0b37b548cd98e3b7d3cc0bc84191357c601913012c9decb89f",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  },
+  {
+    "file": "assets\\vendor\\quaternius-fantasy\\candlestick_triple.glb",
+    "triangles": 2528,
+    "blender_triangles": 2528,
+    "bytes": 5986940,
+    "sha256": "a1a15ae39cbb7544b541c0aec3e9c52dad2fdbe69ef110a0a36655f8f282a577",
+    "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+  }
+]

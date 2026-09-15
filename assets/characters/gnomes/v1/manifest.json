@@ -1,0 +1,385 @@
+{
+  "version": 1,
+  "frame_size": [
+    512,
+    512
+  ],
+  "pivot_pixels": [
+    256,
+    464
+  ],
+  "pivot_normalized": [
+    0.5,
+    0.90625
+  ],
+  "character_height": 416,
+  "view_order": [
+    "front",
+    "side_right",
+    "back",
+    "three_quarter_right"
+  ],
+  "animation": "A-pose base frames only; no motion cycle",
+  "assets": [
+    {
+      "file": "gnome_universal_apose_front_000.png",
+      "sha256": "1e3650b0419a5debebfabd2b6e14c9c7463bbdb56582fc8a0b98be8032f5e421",
+      "view": "front",
+      "character": "universal",
+      "source_bounds": [
+        16,
+        46,
+        511,
+        621
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 179159,
+      "opaque_pixels": 77473
+    },
+    {
+      "file": "gnome_universal_apose_side_right_000.png",
+      "sha256": "a698af83ed7a4c4ac641f51e9f34458dc7076dd6093a20f01585ca56938da3aa",
+      "view": "side_right",
+      "character": "universal",
+      "source_bounds": [
+        609,
+        44,
+        319,
+        624
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 200851,
+      "opaque_pixels": 57590
+    },
+    {
+      "file": "gnome_universal_apose_back_000.png",
+      "sha256": "fcd1604f712a14bf45f3de8500ef9822cfcd1ee155b3137c1a69a97ee56afb63",
+      "view": "back",
+      "character": "universal",
+      "source_bounds": [
+        1072,
+        45,
+        523,
+        622
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 181024,
+      "opaque_pixels": 75758
+    },
+    {
+      "file": "gnome_universal_apose_three_quarter_right_000.png",
+      "sha256": "748da4b35f32983d847f9bb6e84e16e03507d7774b2f28bad8ee8a0587a16c53",
+      "view": "three_quarter_right",
+      "character": "universal",
+      "source_bounds": [
+        1672,
+        45,
+        442,
+        623
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 183787,
+      "opaque_pixels": 73420
+    },
+    {
+      "file": "gnome_ember_hollow_apose_front_000.png",
+      "sha256": "c42e95b41147182bd96e3f58ca8591b21c1b38f22358731dc005f65651388b45",
+      "view": "front",
+      "character": "ember_hollow",
+      "source_bounds": [
+        29,
+        31,
+        553,
+        669
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 176784,
+      "opaque_pixels": 79672
+    },
+    {
+      "file": "gnome_ember_hollow_apose_side_right_000.png",
+      "sha256": "738612760012963dc83ac580f832f3c3dabdaff165fcf1585c68cec189b47ccb",
+      "view": "side_right",
+      "character": "ember_hollow",
+      "source_bounds": [
+        608,
+        22,
+        353,
+        680
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 199734,
+      "opaque_pixels": 58538
+    },
+    {
+      "file": "gnome_ember_hollow_apose_back_000.png",
+      "sha256": "dae79c4949176f68965cf0275e91a763eff90c33f5504ef19dd9eeef34a642e0",
+      "view": "back",
+      "character": "ember_hollow",
+      "source_bounds": [
+        1053,
+        24,
+        563,
+        674
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 179644,
+      "opaque_pixels": 76943
+    },
+    {
+      "file": "gnome_ember_hollow_apose_three_quarter_right_000.png",
+      "sha256": "c4002b563e3434ac02029e66cd29c229cbfd666f0cedaa63261ad9625dc31ce7",
+      "view": "three_quarter_right",
+      "character": "ember_hollow",
+      "source_bounds": [
+        1648,
+        27,
+        493,
+        673
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 180632,
+      "opaque_pixels": 76572
+    },
+    {
+      "file": "gnome_ironbark_apose_front_000.png",
+      "sha256": "4df6217f439a7d08d61360109640ddf763f6cec4c456436bdc8101c5b18d89d1",
+      "view": "front",
+      "character": "ironbark",
+      "source_bounds": [
+        7,
+        34,
+        553,
+        660
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 171240,
+      "opaque_pixels": 85083
+    },
+    {
+      "file": "gnome_ironbark_apose_side_right_000.png",
+      "sha256": "ebe7c069c8625035ef2e3cd7b10328736c2dde56ccbcacfd19e0ed9d0e950cab",
+      "view": "side_right",
+      "character": "ironbark",
+      "source_bounds": [
+        614,
+        33,
+        375,
+        662
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 191145,
+      "opaque_pixels": 66758
+    },
+    {
+      "file": "gnome_ironbark_apose_back_000.png",
+      "sha256": "53879c6ca341b267e47c3e532de0911519cb6bfb8c87dd81db31a727e0ea0cc4",
+      "view": "back",
+      "character": "ironbark",
+      "source_bounds": [
+        1056,
+        33,
+        563,
+        661
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 173315,
+      "opaque_pixels": 83154
+    },
+    {
+      "file": "gnome_ironbark_apose_three_quarter_right_000.png",
+      "sha256": "afa073f8c87393bc596362d683ff836a3a59b27a237169b96a9c2767a5f02a09",
+      "view": "three_quarter_right",
+      "character": "ironbark",
+      "source_bounds": [
+        1648,
+        33,
+        506,
+        661
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 173893,
+      "opaque_pixels": 82818
+    },
+    {
+      "file": "gnome_spore_grove_apose_front_000.png",
+      "sha256": "c353b706516c68f00ef05e10cd307ec300b019c862bce769b8127d01f91c95b5",
+      "view": "front",
+      "character": "spore_grove",
+      "source_bounds": [
+        15,
+        25,
+        567,
+        678
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 174005,
+      "opaque_pixels": 82486
+    },
+    {
+      "file": "gnome_spore_grove_apose_side_right_000.png",
+      "sha256": "213b0ca90bdcebc0a3573a61f106984b2851dd85116a406664dcc4bd181f6198",
+      "view": "side_right",
+      "character": "spore_grove",
+      "source_bounds": [
+        609,
+        25,
+        379,
+        679
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 197125,
+      "opaque_pixels": 60932
+    },
+    {
+      "file": "gnome_spore_grove_apose_back_000.png",
+      "sha256": "65e18a9f992651c194f1a08e0b233ef58679b6cd5a541c563208b70648e49f84",
+      "view": "back",
+      "character": "spore_grove",
+      "source_bounds": [
+        1040,
+        25,
+        581,
+        677
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 177427,
+      "opaque_pixels": 79373
+    },
+    {
+      "file": "gnome_spore_grove_apose_three_quarter_right_000.png",
+      "sha256": "2917eba87ee413771b83950c78640835ce93197b89c360f4458130f3d567c00d",
+      "view": "three_quarter_right",
+      "character": "spore_grove",
+      "source_bounds": [
+        1681,
+        25,
+        475,
+        679
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 183200,
+      "opaque_pixels": 74033
+    },
+    {
+      "file": "gnome_light_realm_apose_front_000.png",
+      "sha256": "4b8a5544eaac341006210df0970f46e195e9eb2046fbf60db8a8755370c6bc35",
+      "view": "front",
+      "character": "light_realm",
+      "source_bounds": [
+        5,
+        39,
+        531,
+        673
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 178165,
+      "opaque_pixels": 78813
+    },
+    {
+      "file": "gnome_light_realm_apose_side_right_000.png",
+      "sha256": "3a0fe1b1ecbce6837525b155277cf3c29e4f4407a3b99074760c7517d7ea7591",
+      "view": "side_right",
+      "character": "light_realm",
+      "source_bounds": [
+        566,
+        39,
+        353,
+        675
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 196784,
+      "opaque_pixels": 61584
+    },
+    {
+      "file": "gnome_light_realm_apose_back_000.png",
+      "sha256": "256426d2cf27deb77d1b1ffa6d0890fb271cd1a4cabc6fa8b3f04256aedb0be5",
+      "view": "back",
+      "character": "light_realm",
+      "source_bounds": [
+        994,
+        39,
+        558,
+        673
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 179518,
+      "opaque_pixels": 77580
+    },
+    {
+      "file": "gnome_light_realm_apose_three_quarter_right_000.png",
+      "sha256": "ea5ecca02c804bfb500a8e92470fad52cad7d88dbce808a28e1691e245fde22b",
+      "view": "three_quarter_right",
+      "character": "light_realm",
+      "source_bounds": [
+        1571,
+        40,
+        479,
+        673
+      ],
+      "size": [
+        512,
+        512
+      ],
+      "transparent_pixels": 182597,
+      "opaque_pixels": 74800
+    }
+  ]
+}

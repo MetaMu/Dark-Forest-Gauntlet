@@ -1,0 +1,27 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: background-extraction. Create a production transparent PNG sprite strip from the supplied modeling sheet. Preserve EXACT character design, clothing, colors, bold outlines, facial identity and shared stout 3.5-head proportions. Extract/reproduce ONLY the four full-body A-pose characters from the TOP row: front, right-facing side, back, right-facing three-quarter, in that order. No parts callouts. Layout: image exactly 2048 by 512 pixels, four equal 512 by 512 cells in one horizontal row. Each character centered in its cell, same scale, hat top at y=48, boot soles at y=464; fit full arms within each cell. Genuine transparent alpha background, including between limbs. Remove ALL paper, floor shadows, text, labels, diagrams and guides. Clean antialiased silhouette. No cast shadow, no glow, no ground, no checkerboard baked in. Keep the original A-poses and attached costume accessories; no handheld weapons added. Output only this four-view transparent sprite strip.",
+  "references": [
+    [
+      "universal",
+      "Gnome Base Modeling Sheet .png"
+    ],
+    [
+      "ember_hollow",
+      "Ember Hollow Gnome Modeling Sheet.png"
+    ],
+    [
+      "ironbark",
+      "Ironbark Gnome Modeling Sheet.png.png"
+    ],
+    [
+      "spore_grove",
+      "Spore Gnome Modeling Sheet.png.png"
+    ],
+    [
+      "light_realm",
+      "Light Gnome Modeling Sheet.png.png"
+    ]
+  ],
+  "postprocessing": "Exterior neutral checkerboard flood fill bounded by black silhouettes; retain four largest character components; proportional resize to height 416; center on 512 canvas at foot baseline y=464."
+}

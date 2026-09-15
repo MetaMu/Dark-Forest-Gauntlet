@@ -1,0 +1,247 @@
+{
+  "tool": "Blender 5.2.1 LTS",
+  "geometry": "Original, except separately credited Quaternius conversions",
+  "materials": "Poly Haven CC0-1.0; see assets/vendor/polyhaven-forest/receipt.json",
+  "files": [
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\axe_bronze.glb",
+      "triangles": 826,
+      "blender_triangles": 826,
+      "bytes": 3467392,
+      "sha256": "f49ad957d36dbf6f72cdef0a0331a9e33ab64a0aca2ae2bb9081391135f1232f",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\sword_bronze.glb",
+      "triangles": 1540,
+      "blender_triangles": 1540,
+      "bytes": 3508972,
+      "sha256": "6dc00f7f1da9b91b0cd668bc6afd1e55d0bc99f3e47baa4ce0cf60076267b416",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\shield_wooden.glb",
+      "triangles": 1404,
+      "blender_triangles": 1404,
+      "bytes": 8729484,
+      "sha256": "f14565decd4cdb1edfd14780f7e12f8a5c84dd23cd7326054312ac18b5ab50c1",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\torch_metal.glb",
+      "triangles": 970,
+      "blender_triangles": 970,
+      "bytes": 2519340,
+      "sha256": "1fb3699688dc81e723093a20c266c409c2aa9e9281902b54b49373bb50cd12c7",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\lantern_wall.glb",
+      "triangles": 2822,
+      "blender_triangles": 2822,
+      "bytes": 2601144,
+      "sha256": "8880ea94f3e2696d82f720531205612808c362224aa33432b9a53ad0c323a13a",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\chest_wood.glb",
+      "triangles": 2546,
+      "blender_triangles": 2626,
+      "bytes": 5357360,
+      "sha256": "32807fbb53bdab66b7eea184e53cfe91c401e33124f9e8cd43e5110f29872582",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\barrel.glb",
+      "triangles": 824,
+      "blender_triangles": 824,
+      "bytes": 5289968,
+      "sha256": "d6988b2bf55bf3b681e7fbe1e4b10131e87b3e5beef18eeaa0b12adfb84efab0",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\crate_wooden.glb",
+      "triangles": 1576,
+      "blender_triangles": 1576,
+      "bytes": 5299392,
+      "sha256": "9a59133c3bd32e4098d2cb26b1a0841b5917850114daf36a398d5fdfe9a3eaec",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\weaponstand.glb",
+      "triangles": 2084,
+      "blender_triangles": 2084,
+      "bytes": 5304056,
+      "sha256": "213d6fbf2c8aac2e726ba15e2d9a681300237d1992842af6f47c23342ec37dbb",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\cauldron.glb",
+      "triangles": 2020,
+      "blender_triangles": 2020,
+      "bytes": 2542920,
+      "sha256": "8cd1eb5b0c0927b1e33dcf92b0f9075b76487ba8156980b0aa532934972b7fde",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\potion_1.glb",
+      "triangles": 440,
+      "blender_triangles": 440,
+      "bytes": 3452856,
+      "sha256": "b85ebcf2c7e889cfbbc385b35acb8f2704e7a6dc6586af49a15df38236378e90",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\book_7.glb",
+      "triangles": 724,
+      "blender_triangles": 724,
+      "bytes": 5948416,
+      "sha256": "d5fdd2724a14d559b9be6c49f5fa361c530f4e2470053a39e61ffeaa02e0a92f",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\banner_1.glb",
+      "triangles": 448,
+      "blender_triangles": 448,
+      "bytes": 7505468,
+      "sha256": "e6ab8c601b194178c82e237f192ecbc034b3f3388a503d343f382a503078fe29",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\anvil_log.glb",
+      "triangles": 3808,
+      "blender_triangles": 3808,
+      "bytes": 8791992,
+      "sha256": "2e9bf2537c571e0b37b548cd98e3b7d3cc0bc84191357c601913012c9decb89f",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\vendor\\quaternius-fantasy\\candlestick_triple.glb",
+      "triangles": 2528,
+      "blender_triangles": 2528,
+      "bytes": 5986940,
+      "sha256": "a1a15ae39cbb7544b541c0aec3e9c52dad2fdbe69ef110a0a36655f8f282a577",
+      "source": "Quaternius Fantasy Props MegaKit Standard / CC0-1.0"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\ruined_wall.glb",
+      "triangles": 2508,
+      "blender_triangles": 2508,
+      "bytes": 2865804,
+      "sha256": "096818ea7e27f74e3f95bf10c8a5efc4cbda7edf3112d03a2f888942fc1014d0",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\ruined_plinth.glb",
+      "triangles": 864,
+      "blender_triangles": 864,
+      "bytes": 2770720,
+      "sha256": "e6e7c07cc5505d67777c1a7b3287e86c9ae0c79d4f5cd0c4ab4da04dcb29c40c",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\sanctum_arch.glb",
+      "triangles": 3068,
+      "blender_triangles": 3068,
+      "bytes": 5540092,
+      "sha256": "70dc40bf31980c37ea5b0af4a3987bfe9b2a48c3251ba725703fc90714924ac9",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\iron_gate.glb",
+      "triangles": 320,
+      "blender_triangles": 320,
+      "bytes": 16132,
+      "sha256": "5f680bb73a6ac7cfb0c13f367da6d91f92c1cdc3694f8084cbdbd0575249c3b2",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\ancient_tree_0.glb",
+      "triangles": 1328,
+      "blender_triangles": 1328,
+      "bytes": 2718336,
+      "sha256": "c4ba202b7fab274ec7f02bb233383d5a085665399fb9b533c3b13ed1ca56e01f",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\ancient_tree_1.glb",
+      "triangles": 1328,
+      "blender_triangles": 1328,
+      "bytes": 2718852,
+      "sha256": "a1cb73f4cb4404bbaa5b05f6e730e8ae7d026b7f675f3804384ce4a9964cee5a",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\ancient_tree_2.glb",
+      "triangles": 1328,
+      "blender_triangles": 1328,
+      "bytes": 2718564,
+      "sha256": "1e51b7666e57f01d79001a9b37de9260a3db8a057c6c46adb63705f701bf1703",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\fern.glb",
+      "triangles": 288,
+      "blender_triangles": 288,
+      "bytes": 24348,
+      "sha256": "73cf7aa5c865a0cd684ea093712e770e8be5a6eb3082fe60461e4575c5ae87b9",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\rubble.glb",
+      "triangles": 400,
+      "blender_triangles": 400,
+      "bytes": 2766048,
+      "sha256": "1e74a5f842eff6f983260f8c7ca8ef44251f7e06a0d3435e37d872133cbe30f6",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\ritual_ring.glb",
+      "triangles": 2592,
+      "blender_triangles": 2592,
+      "bytes": 2856148,
+      "sha256": "1477414fe398f96dbcbc06e6a930df592611611efe07d2e7366628c21f0e8f93",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\ironbark_bow.glb",
+      "triangles": 332,
+      "blender_triangles": 332,
+      "bytes": 2676152,
+      "sha256": "034cf4f04b0c1efd3123d338be973de3ff5f3456aa011e9d37e282865a6864cf",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\spore_staff.glb",
+      "triangles": 568,
+      "blender_triangles": 568,
+      "bytes": 2709324,
+      "sha256": "b526bb3eb16cb6ccfcc7fc9f40d4e7177939345ccd29b948eba7dcf907bca39c",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\light_staff.glb",
+      "triangles": 1128,
+      "blender_triangles": 1128,
+      "bytes": 2744636,
+      "sha256": "544859be04f4c2c1d7f37be60edbf28189540fdba3bbca33ef252649d254fb24",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\rootling.glb",
+      "triangles": 860,
+      "blender_triangles": 860,
+      "bytes": 2705076,
+      "sha256": "c3e72cd091421dcfc4bd78d3f4b7e655178e55f5fa8dfd04ce3f4aeecbb31a02",
+      "source": "Original Blender-authored geometry"
+    },
+    {
+      "file": "assets\\environment\\moonlit-ruins\\root_heart.glb",
+      "triangles": 1220,
+      "blender_triangles": 1220,
+      "bytes": 2726084,
+      "sha256": "61bd9735a3961975ee7a43bbd41a7a709f7702d43b5b51c33a6092415fc0ab6c",
+      "source": "Original Blender-authored geometry"
+    }
+  ]
+}

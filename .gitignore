@@ -2,7 +2,12 @@
 *.tmp
 tools/godot/
 tools/godot.zip
+tools/video-deps/
+__pycache__/
+*.pyc
+assets/characters/gnomes/v1/*.zip
 artifacts/
+builds/
 reference/*
 !reference/.gdignore
 Character Sprites/*

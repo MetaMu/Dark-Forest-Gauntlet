@@ -1,0 +1,1 @@
+CC0 1.0 assets from Kenney and Raffaele Picca. Original licenses: KENNEY-LICENSE.txt and RPICSTER-LICENSE.txt. Exact sources and SHA-256 hashes: receipt.json.

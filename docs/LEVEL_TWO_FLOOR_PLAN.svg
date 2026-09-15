@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680">
+<rect width="960" height="680" fill="#101f23"/>
+<g font-family="Arial" fill="#e9e5ce"><text x="40" y="40" font-size="26">LEVEL TWO — THE BELLCAP CISTERN</text><text x="40" y="65" font-size="14" fill="#9bc7bd">Top-down floor plan · 48 × 48 game units · North at top</text></g>
+<g transform="translate(45 100)">
+<rect width="480" height="480" fill="#374e46" stroke="#a0b5a0" stroke-width="5"/>
+<g fill="#197e80"><rect x="160" y="50" width="35" height="335"/><rect x="285" y="50" width="35" height="335"/></g>
+<g fill="#73887a" stroke="#bac6a6" stroke-width="2"><rect x="215" y="210" width="50" height="80"/><rect x="142" y="160" width="16" height="100"/><rect x="322" y="130" width="16" height="80"/><rect x="130" y="332" width="60" height="16"/><rect x="290" y="332" width="60" height="16"/></g>
+<g fill="#556b55"><rect x="157" y="290" width="41" height="40"/><rect x="282" y="290" width="41" height="40"/><rect x="157" y="120" width="41" height="40"/><rect x="282" y="120" width="41" height="40"/></g>
+<g fill="#8a976c"><rect x="67" y="297" width="25" height="25"/><rect x="387" y="327" width="25" height="25"/><rect x="187" y="127" width="25" height="25"/><rect x="277" y="97" width="25" height="25"/></g>
+<path d="M0 40 H215 M265 40 H480" stroke="#a1b29a" stroke-width="6"/>
+<path d="M215 40 H265" stroke="#e9c675" stroke-width="6" stroke-dasharray="5 4"/>
+<g fill="#cb79b2" stroke="#ffe2bc" stroke-width="2"><circle cx="80" cy="150" r="13"/><circle cx="390" cy="190" r="13"/><circle cx="240" cy="100" r="13"/></g>
+<g font-family="Arial" font-size="15" font-weight="bold" fill="#12211e" text-anchor="middle"><text x="80" y="155">A</text><text x="390" y="195">A</text><text x="240" y="105">A</text></g>
+<g fill="#badb69"><circle cx="70" cy="120" r="10"/><circle cx="400" cy="150" r="10"/></g>
+<g font-family="Arial" font-size="12" fill="#17281c" text-anchor="middle"><text x="70" y="124">M</text><text x="400" y="154">M</text></g>
+<g fill="#a8c9c1"><rect x="104" y="154" width="13" height="13"/><rect x="264" y="104" width="13" height="13"/></g>
+<g fill="#e6c996"><circle cx="120" cy="310" r="6"/><circle cx="360" cy="330" r="6"/><circle cx="90" cy="190" r="6"/><circle cx="370" cy="230" r="6"/></g>
+<g fill="none" stroke="#e6d6a1" stroke-width="3" stroke-dasharray="7 7"><path d="M235 405 L215 365 L110 365 L110 270 L90 215"/><path d="M245 405 L265 365 L370 365 L375 250"/><path d="M240 345 L295 280 L290 170 L240 135"/></g>
+<g font-family="Arial" text-anchor="middle" fill="#fff0c6"><text x="240" y="24" font-size="13">NORTH EXIT</text><text x="240" y="74" font-size="11">PEAR SHRINE</text><text x="240" y="430" font-size="18">ENTRY</text><text x="240" y="452" font-size="12">Both teams arrive here</text></g>
+</g>
+<g font-family="Arial" fill="#e9e5ce" transform="translate(565 115)">
+<text y="0" font-size="22">Three routes, one objective</text>
+<text y="35" font-size="16">West: flank the nursery</text><text y="59" font-size="13" fill="#acd0bd">Long wall breaks sightlines.</text>
+<text y="103" font-size="16">Center: shortest, most exposed</text><text y="127" font-size="13" fill="#acd0bd">Split around the raised court.</text>
+<text y="171" font-size="16">East: Mortarcap pressure</text><text y="195" font-size="13" fill="#acd0bd">Use cover, then move between blasts.</text>
+<text y="245" font-size="20">Enemy placement</text>
+<text y="276" font-size="15" fill="#de93bd">A — Cistern Anchor · 150 HP</text>
+<text y="306" font-size="15" fill="#badb69">M — Mortarcap · ranged area denial</text>
+<text y="336" font-size="15" fill="#a8c9c1">Square — Ironroot Guard · 90 HP</text>
+<text y="366" font-size="15" fill="#e6c996">Dot — Hardened Rootling · 42 HP</text>
+<text y="408" font-size="13">First anchor destroyed: one reinforcement pair.</text>
+<text y="432" font-size="13">Clear all enemies → collect pear → north gate.</text>
+</g>
+<text x="45" y="632" fill="#a9c4b7" font-family="Arial" font-size="14">Teal channels are shallow, traversable water. Orange bomb circles warn; green pools hurt.</text>
+</svg>

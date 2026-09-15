@@ -10,13 +10,12 @@ var roster: Label
 var objective_label: Label
 var focus := Vector3.ZERO
 var encounter: Node3D
+var navigation := AStarGrid2D.new()
+var obstacles: Array[Rect2] = []
 
 func _ready() -> void:
-	box(Vector3(28, 0.5, 24), Vector3(0, -0.25, 0), Color("263d33"), true)
-	box(Vector3(29, 2, 0.5), Vector3(0, 1, -12), Color("425347"), true)
-	box(Vector3(29, 2, 0.5), Vector3(0, 1, 12), Color("425347"), true)
-	box(Vector3(0.5, 2, 24), Vector3(-14, 1, 0), Color("425347"), true)
-	box(Vector3(0.5, 2, 24), Vector3(14, 1, 0), Color("425347"), true)
+	Player.LocalInput.configure()
+	build_clearing()
 	var light := DirectionalLight3D.new()
 	light.rotation_degrees = Vector3(-55, -30, 0)
 	light.light_energy = 1.3
@@ -68,10 +67,14 @@ func _ready() -> void:
 	roster.offset_top = -106
 	roster.add_theme_font_size_override("font_size", 16)
 	join_player(-1)
-	encounter = Encounter.new()
+	encounter = create_encounter()
 	encounter.name = "Encounter"
 	add_child(encounter)
+	build_navigation()
 	update_camera(1.0)
+
+func create_encounter() -> Node3D:
+	return Encounter.new()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton and event.pressed and event.button_index == JOY_BUTTON_START:
@@ -105,7 +108,7 @@ func join_player(device: int) -> void:
 	var player := Player.new()
 	player.device = device
 	player.collision_layer = 4
-	player.collision_mask = 1
+	player.collision_mask = 3
 	player.attack_requested.connect(on_attack)
 	player.name = "Player%d" % (slot + 1)
 	var collision := CollisionShape3D.new()
@@ -132,11 +135,15 @@ func join_player(device: int) -> void:
 	var pulse := MeshInstance3D.new()
 	pulse.name = "PlaceholderAttackRadius"
 	var ring := TorusMesh.new()
-	ring.inner_radius = 1.9
-	ring.outer_radius = 2.1
+	ring.inner_radius = Player.POWER_RADIUS - 0.18
+	ring.outer_radius = Player.POWER_RADIUS
 	pulse.mesh = ring
 	pulse.position.y = 0.15
-	pulse.material_override = material
+	var power_material := StandardMaterial3D.new()
+	power_material.albedo_color = COLORS[slot]
+	power_material.emission_enabled = true
+	power_material.emission = COLORS[slot]
+	pulse.material_override = power_material
 	pulse.visible = false
 	player.add_child(pulse)
 	player.attack_visual = pulse
@@ -148,7 +155,7 @@ func join_player(device: int) -> void:
 	marker.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	player.add_child(marker)
 	add_child(player)
-	player.position = Vector3((slot % 2) * 2 - 1, 0.1, floori(slot / 2.0) * 2 + 4)
+	player.position = Vector3((slot % 2) * 2 - 1, 0.1, floori(slot / 2.0) * 2 + 15)
 	players.append(player)
 
 func _process(delta: float) -> void:
@@ -191,6 +198,8 @@ func update_camera(delta: float) -> void:
 	camera.size = lerpf(camera.size, needed, 1.0 - exp(-5.0 * delta))
 
 func box(size: Vector3, location: Vector3, color: Color, solid: bool) -> StaticBody3D:
+	if solid and location.y >= 0.0:
+		obstacles.append(Rect2(Vector2(location.x - size.x / 2.0 - 0.55, location.z - size.z / 2.0 - 0.55), Vector2(size.x + 1.1, size.z + 1.1)))
 	var body := StaticBody3D.new()
 	body.position = location
 	add_child(body)
@@ -209,3 +218,64 @@ func box(size: Vector3, location: Vector3, color: Color, solid: bool) -> StaticB
 		collision.shape = collision_shape
 		body.add_child(collision)
 	return body
+
+func build_clearing() -> void:
+	box(Vector3(48, 0.5, 48), Vector3(0, -0.25, 0), Color("263d33"), true)
+	for z in [-24, 24]:
+		box(Vector3(49, 2, 0.5), Vector3(0, 1, z), Color("425347"), true)
+	for x in [-24, 24]:
+		box(Vector3(0.5, 2, 48), Vector3(x, 1, 0), Color("425347"), true)
+	# Three connected combat layers with broad center and outer flanking routes.
+	box(Vector3(42, 0.02, 12), Vector3(0, 0.01, 15), Color("3b4934"), false)
+	box(Vector3(42, 0.02, 14), Vector3(0, 0.01, 0), Color("304b43"), false)
+	box(Vector3(42, 0.02, 12), Vector3(0, 0.01, -13), Color("45404c"), false)
+	for z in [8, -5]:
+		for x in [-11, 11]:
+			box(Vector3(9, 1.4, 1.6), Vector3(x, 0.7, z), Color("626657"), true)
+	# Ruined plinths and stump clusters make spaces to weave around.
+	for point in [Vector3(-7, 0, 16), Vector3(8, 0, 15), Vector3(-16, 0, 1), Vector3(15, 0, 0), Vector3(-4, 0, -12), Vector3(5, 0, -14)]:
+		box(Vector3(2.5, 1.8, 2.5), point + Vector3(0, 0.9, 0), Color("6c705e"), true)
+		box(Vector3(1.3, 0.6, 1.3), point + Vector3(0, 2.1, 0), Color("8b9074"), false)
+	for x in [-21, 21]:
+		for z in [-15, -2, 12]:
+			box(Vector3(1.7, 3.2, 1.7), Vector3(x, 1.6, z), Color("594438"), true)
+			box(Vector3(3.4, 1.0, 3.4), Vector3(x, 3.6, z), Color("385a42"), false)
+	for entry in [["ENTRY GROVE", 18], ["RUIN WALK / FLANKING PATHS", 2], ["CORRUPTED SANCTUM", -15]]:
+		var sign := Label3D.new()
+		sign.text = entry[0]
+		sign.position = Vector3(0, 0.1, entry[1])
+		sign.rotation_degrees.x = -90
+		sign.pixel_size = 0.014
+		add_child(sign)
+
+func build_navigation() -> void:
+	navigation.region = Rect2i(-24, -24, 49, 49)
+	navigation.cell_size = Vector2.ONE
+	navigation.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_ONLY_IF_NO_OBSTACLES
+	navigation.update()
+	for x in range(-24, 25):
+		for z in range(-24, 25):
+			for obstacle in obstacles:
+				if obstacle.has_point(Vector2(x, z)):
+					navigation.set_point_solid(Vector2i(x, z))
+					break
+
+func route_to(from: Vector3, to: Vector3) -> PackedVector3Array:
+	var start := walkable_cell(from)
+	var end := walkable_cell(to)
+	var result := PackedVector3Array()
+	for point in navigation.get_point_path(start, end, true):
+		result.append(Vector3(point.x, 0, point.y))
+	if result.size() > 1:
+		result.remove_at(0)
+	return result
+
+func walkable_cell(point: Vector3) -> Vector2i:
+	var cell := Vector2i(clampi(roundi(point.x), -23, 23), clampi(roundi(point.z), -23, 23))
+	for radius in range(0, 4):
+		for x in range(-radius, radius + 1):
+			for y in range(-radius, radius + 1):
+				var candidate := cell + Vector2i(x, y)
+				if navigation.is_in_boundsv(candidate) and not navigation.is_point_solid(candidate):
+					return candidate
+	return cell

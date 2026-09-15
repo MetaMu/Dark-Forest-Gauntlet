@@ -8,19 +8,19 @@ var room: Node3D
 var enemies: Array = []
 var pear: MeshInstance3D
 var gate: StaticBody3D
-var reward_position := Vector3(0, 0, -4)
-const EXIT_Z := -10.0
+var reward_position := Vector3(0, 0, -17)
+const EXIT_Z := -22.0
 const EXIT_HALF_WIDTH := 2.5
 
 func _ready() -> void:
 	room = get_parent()
-	gate = room.box(Vector3(5, 2.0, 0.5), Vector3(0, 1.0, -8.5), Color("694c70"), true)
+	gate = room.box(Vector3(5, 2.0, 0.5), Vector3(0, 1.0, -20), Color("694c70"), true)
 	gate.name = "PlaceholderRootGate"
-	room.box(Vector3(11.5, 2, 0.5), Vector3(-8.25, 1, -8.5), Color("425347"), true)
-	room.box(Vector3(11.5, 2, 0.5), Vector3(8.25, 1, -8.5), Color("425347"), true)
+	room.box(Vector3(21.5, 2, 0.5), Vector3(-13.25, 1, -20), Color("425347"), true)
+	room.box(Vector3(21.5, 2, 0.5), Vector3(13.25, 1, -20), Color("425347"), true)
 	var exit_label := Label3D.new()
 	exit_label.text = "ROOT GATE / EXIT"
-	exit_label.position = Vector3(0, 2.8, -8.5)
+	exit_label.position = Vector3(0, 2.8, -20)
 	exit_label.pixel_size = 0.012
 	exit_label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	add_child(exit_label)
@@ -31,7 +31,7 @@ func begin() -> void:
 	state = State.COMBAT
 	for player in room.players:
 		player.combat_enabled = true
-	for point in [Vector3(-6, 0, -3), Vector3(6, 0, -3)]:
+	for point in [Vector3(-12, 0, -11), Vector3(12, 0, -11)]:
 		var heart = Enemy.new()
 		heart.is_heart = true
 		heart.health = 100.0
@@ -72,9 +72,10 @@ func attack(player: CharacterBody3D) -> void:
 		return
 	for enemy in enemies:
 		if is_instance_valid(enemy) and not enemy.dead:
-			var radius := 2.5 if enemy.is_heart else 2.1
-			if player.position.distance_to(enemy.position) <= radius:
-				enemy.take_damage(20.0)
+			if player.position.distance_to(enemy.position) <= player.POWER_RADIUS:
+				var query := PhysicsRayQueryParameters3D.create(player.position + Vector3.UP * 0.7, enemy.position + Vector3.UP * 0.7, 1)
+				if get_world_3d().direct_space_state.intersect_ray(query).is_empty():
+					enemy.take_damage(20.0, player.position)
 
 func _physics_process(delta: float) -> void:
 	advance(delta)
@@ -129,6 +130,9 @@ func collect_pear() -> void:
 	pear.queue_free()
 	gate.hide()
 	gate.collision_layer = 0
+	# Companions must see the same open gate as physics does.
+	for x in range(-2,3):
+		for z in range(-21,-18): room.navigation.set_point_solid(Vector2i(x,z),false)
 	gate.collision_mask = 0
 
 func update_revives(delta: float) -> void:
@@ -138,7 +142,7 @@ func update_revives(delta: float) -> void:
 		var helping := false
 		for helper in room.players:
 			if helper != fallen and not helper.downed and helper.invulnerability <= 0.0:
-				if helper.position.distance_to(fallen.position) <= 2.0 and LocalInput.interact(helper.device):
+				if helper.controlled and helper.position.distance_to(fallen.position) <= 2.0 and LocalInput.interact(helper.device):
 					helping = true
 		fallen.revive_progress = fallen.revive_progress + delta if helping else 0.0
 		if fallen.revive_progress >= 2.0:

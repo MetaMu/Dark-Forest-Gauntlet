@@ -1,0 +1,98 @@
+{
+  "id": "maria",
+  "name": "Maria",
+  "source": "Nibble #3673 Maria GIFT Gnome.png",
+  "realm": "The Violet Veil",
+  "traits": "pink red patterned cap with decorative arrow through hat; spiral eyes; white beard; tongue out; purple scarf red pink shirt",
+  "gesture": "give a mischievous palm-up flourish and briefly conjure two tiny lavender twinkles that swap places before fading",
+  "input": "input-2d.png",
+  "origin": "new generation",
+  "realm_status": "proposed art direction; not a confirmed quiz result",
+  "personality_status": "gesture interpretation, not verified member personality",
+  "source_sha256": "1712688a496b402fb69937d7fafbdad599ef0dab14878ec81e6eff3425948eb1",
+  "source_crops": [
+    [
+      0,
+      0,
+      417,
+      614
+    ],
+    [
+      417,
+      0,
+      823,
+      614
+    ],
+    [
+      823,
+      0,
+      1254,
+      614
+    ],
+    [
+      0,
+      614,
+      435,
+      1254
+    ],
+    [
+      435,
+      614,
+      868,
+      1254
+    ],
+    [
+      868,
+      614,
+      1254,
+      1254
+    ]
+  ],
+  "anchors": [
+    [
+      207.5,
+      589
+    ],
+    [
+      203.0,
+      590
+    ],
+    [
+      214.0,
+      589
+    ],
+    [
+      206.5,
+      594
+    ],
+    [
+      185.5,
+      593
+    ],
+    [
+      179.5,
+      594
+    ]
+  ],
+  "shared_scale": 0.7719298245614035,
+  "pivot_normalized": [
+    0.5,
+    0.9375
+  ],
+  "frame_count": 5,
+  "durations_ms": [
+    360,
+    180,
+    300,
+    220,
+    340
+  ],
+  "validation": "5 decoded GIF frames, timing, RGBA sheet, corner transparency and output bounds passed",
+  "warnings": [],
+  "engine_tested": false,
+  "approval": "pending member visual review",
+  "representation": "3D-rendered raster; no mesh or rig",
+  "portrait": "bust crop derived from full-body master",
+  "generator": "Codex built-in image generation",
+  "visual_approval": "pending member review"
+}

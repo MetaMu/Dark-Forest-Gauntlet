@@ -1,0 +1,150 @@
+{
+  "id": "kenney-nature",
+  "version": "2.1",
+  "source": "https://kenney.nl/assets/nature-kit",
+  "download": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+  "license": "CC0-1.0",
+  "license_sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d",
+  "archive_sha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+  "acquired": "2026-09-09",
+  "method": "User-authorized local verification; game-dev CLI unavailable",
+  "validation": "Header, embedded dependency, triangle budget and copied SHA-256 checks. Engine validation recorded separately.",
+  "files": [
+    {
+      "file": "tree_oak.glb",
+      "sha256": "d7fd8773674928c50c11b66d12c636d49bdcc15a8b1c7fbb98e6f63a3439a3f3",
+      "bytes": 14644,
+      "triangles": 196,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "tree_detailed_dark.glb",
+      "sha256": "1e2211dc6483b1d8a32130c3441afa108d4075f0d851825620fba85d2dc6e5d7",
+      "bytes": 31416,
+      "triangles": 402,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "tree_pineRoundC.glb",
+      "sha256": "29080a4935bae6b4ab29066f22c99c58f88b23ce4e2f79b4dcbb5e76de73f69d",
+      "bytes": 15332,
+      "triangles": 206,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "tree_small.glb",
+      "sha256": "d26c0eeed65cc681667f50042ef23ec72ce47ae3b39837bfeec170b05ba6ab6a",
+      "bytes": 6500,
+      "triangles": 62,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "rock_largeA.glb",
+      "sha256": "6dd15390fd96501dcd1454765a17ba61dbbd8d47705dfe5149c8dd92b353ce25",
+      "bytes": 7552,
+      "triangles": 80,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "rock_largeC.glb",
+      "sha256": "23aee8b727adeaf260207af3e0615dc69aa766c6d87de1d44cbc8c2711d74dd1",
+      "bytes": 7004,
+      "triangles": 72,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "rock_tallA.glb",
+      "sha256": "88250f236a3b75f8b55c1d8afb6af020f8a91b1e81f9fb51f7ef513420d45a2d",
+      "bytes": 12072,
+      "triangles": 136,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "stone_smallFlatA.glb",
+      "sha256": "04f2d1bf9dba77426a5fa076a07d7b1319fb78021b7fe619a6ca3599d96d762a",
+      "bytes": 2872,
+      "triangles": 20,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "stump_roundDetailed.glb",
+      "sha256": "3017359bd0bdf84fa137f8aca33b31b1a54c3a3f11d36e1d0995868dedd53768",
+      "bytes": 8188,
+      "triangles": 96,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "stump_old.glb",
+      "sha256": "4c2d2da34804c1662c6a776a9d60fe4449e6f6fdd50914bfec7d5cca3e9ceddb",
+      "bytes": 9564,
+      "triangles": 120,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "log.glb",
+      "sha256": "8c8fe8f6adfc03a3c0cd6cb24961ff74be96c2da284d70322f05797d049972d6",
+      "bytes": 14288,
+      "triangles": 200,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "log_large.glb",
+      "sha256": "e7a92369062d491e5a31a163d390e07db04ee573605bbfa84c00660d18896b4c",
+      "bytes": 7924,
+      "triangles": 96,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "grass_large.glb",
+      "sha256": "af49a595624abca7249824eeefb944d4baf974abeeb5b16110d175da3563d6cd",
+      "bytes": 18504,
+      "triangles": 224,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "grass_leafs.glb",
+      "sha256": "8bc4c0b17c2e64c34e1acbf7c4a2fd8c04cfcd7155328e61767887b2ced112c7",
+      "bytes": 4608,
+      "triangles": 36,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "plant_bush.glb",
+      "sha256": "ae7b1beb39e242b13f5f29e3ec23ef21034b814f82297b8aa00a9bf4e1b09590",
+      "bytes": 4396,
+      "triangles": 32,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "mushroom_redGroup.glb",
+      "sha256": "29f02df0589dd2b09e8d2aff6a4662394dac5cfcf1fec701640dcbd6127e0802",
+      "bytes": 14960,
+      "triangles": 144,
+      "meshes": 1,
+      "embeddedDependencies": true
+    },
+    {
+      "file": "mushroom_tanGroup.glb",
+      "sha256": "2dc979485f164d7dce34329096271f44e0c9ea329c104251d94bcfbc8f8fe05e",
+      "bytes": 14956,
+      "triangles": 144,
+      "meshes": 1,
+      "embeddedDependencies": true
+    }
+  ]
+}

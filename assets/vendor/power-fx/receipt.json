@@ -1,0 +1,75 @@
+{
+  "description": "Selected original CC0 alpha textures for game-native power effects",
+  "files": [
+    {
+      "entry": "PNG (Transparent)/flame_01.png",
+      "archive_sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+      "file": "flame_01.png",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/particle-pack",
+      "sha256": "92a70bcb90b1e21c57b2dae42843135703b2e988abee97433f84c3119723d144"
+    },
+    {
+      "entry": "PNG (Transparent)/smoke_01.png",
+      "archive_sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+      "file": "smoke_01.png",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/particle-pack",
+      "sha256": "e8724c219e8d35859167fc0a7e207e13c72ccf0c29704909b9bb3d3dc71c6cf7"
+    },
+    {
+      "entry": "PNG (Transparent)/spark_05.png",
+      "archive_sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+      "file": "spark_05.png",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/particle-pack",
+      "sha256": "9624ea2017b8b2767a9d3b82e978b7fdf5154d83e6756cd919da51447bb97138"
+    },
+    {
+      "entry": "PNG (Transparent)/light_02.png",
+      "archive_sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+      "file": "light_02.png",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/particle-pack",
+      "sha256": "f1bdb57478703fec539f7b8eeceb494c4a23664652b296389f310104be80cfe0"
+    },
+    {
+      "entry": "PNG (Transparent)/scorch_01.png",
+      "archive_sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+      "file": "scorch_01.png",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/particle-pack",
+      "sha256": "ea72697696638786ccd4795a346d177b1b6a904331b5536a7e85a7ed927b93a5"
+    },
+    {
+      "entry": "PNG (Transparent)/trace_01.png",
+      "archive_sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+      "file": "trace_01.png",
+      "license": "CC0-1.0",
+      "source": "https://kenney.nl/assets/particle-pack",
+      "sha256": "34de69bc3f665b23fe9bed15f388efd8e8e4dc1a99f2fc5db9ba8715c525711f"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/RPicster/Godot-particle-and-vfx-textures/9bb6fe7cc50534e171d2093630f3288773c8c865/textures/256/alpha/effect_1.png",
+      "sha256": "d04e5fd666df65d919f832ecbe20a169888a0fc5c489ccd4167d35454dbc6f88",
+      "license": "CC0-1.0",
+      "file": "effect_1.png",
+      "commit": "9bb6fe7cc50534e171d2093630f3288773c8c865"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/RPicster/Godot-particle-and-vfx-textures/9bb6fe7cc50534e171d2093630f3288773c8c865/textures/256/alpha/spotlight_1.png",
+      "sha256": "ee447c7a1cc2b390e689486fc0ed504bf8b7aa2d098193c4ef3f77eb5ed30196",
+      "license": "CC0-1.0",
+      "file": "spotlight_1.png",
+      "commit": "9bb6fe7cc50534e171d2093630f3288773c8c865"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/RPicster/Godot-particle-and-vfx-textures/9bb6fe7cc50534e171d2093630f3288773c8c865/textures/256/alpha/spotlight_6.png",
+      "sha256": "e15c3b13cdb2fb43686e8188f43de7f683eb41ee48b1ba7c763c96d2336eaa01",
+      "license": "CC0-1.0",
+      "file": "spotlight_6.png",
+      "commit": "9bb6fe7cc50534e171d2093630f3288773c8c865"
+    }
+  ],
+  "license": "CC0-1.0"
+}

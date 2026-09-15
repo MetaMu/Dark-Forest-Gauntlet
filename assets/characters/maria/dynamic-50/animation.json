@@ -1,0 +1,870 @@
+{
+  "generation": "Built-in ImageGen, five ten-pose sheets; every body pose separately generated within its sheet",
+  "frame_count": 50,
+  "size": [
+    640,
+    640
+  ],
+  "duration_ms": 3120,
+  "durations_ms": [
+    120,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    120
+  ],
+  "gif_background": "white matte",
+  "png_and_atlas": "cutouts sliced from corrected white-background sheets",
+  "atlas": {
+    "columns": 10,
+    "rows": 5,
+    "cell_size": 320
+  },
+  "frames": [
+    {
+      "frame": 1,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        0,
+        0
+      ],
+      "source_bbox_in_column": [
+        140,
+        72,
+        315,
+        357
+      ],
+      "lift_px": 0,
+      "sha256": "4568d4e46003ef72b5cacf0bfe81881cc8a62d766ea26723da38f3bb47891868"
+    },
+    {
+      "frame": 2,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        1,
+        0
+      ],
+      "source_bbox_in_column": [
+        110,
+        61,
+        314,
+        357
+      ],
+      "lift_px": 0,
+      "sha256": "2d5c57e0a39a98a1c19fcb9f9a2e974bbecb2a990bdadd7910989611fd14d992"
+    },
+    {
+      "frame": 3,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        2,
+        0
+      ],
+      "source_bbox_in_column": [
+        104,
+        89,
+        284,
+        357
+      ],
+      "lift_px": 0,
+      "sha256": "8c90bb26f652921f4d03d612c9e0f1817d98fa99cd6c8a05aa252a239f94eb82"
+    },
+    {
+      "frame": 4,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        3,
+        0
+      ],
+      "source_bbox_in_column": [
+        78,
+        96,
+        261,
+        357
+      ],
+      "lift_px": 0,
+      "sha256": "4f5738273922c65dd3e9c3cf0de11503a5cb092f9bde8611657701447d1112d7"
+    },
+    {
+      "frame": 5,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        4,
+        0
+      ],
+      "source_bbox_in_column": [
+        58,
+        107,
+        277,
+        357
+      ],
+      "lift_px": 0,
+      "sha256": "b0f4cd78fd696cfdd337d13a7c71bfd51f77b17d7263c022184e4bc39a74e64e"
+    },
+    {
+      "frame": 6,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        0,
+        1
+      ],
+      "source_bbox_in_column": [
+        99,
+        486,
+        298,
+        713
+      ],
+      "lift_px": 0,
+      "sha256": "26fb9190c6e76e8e2d4909bac803ac54c9ee0a2986e937868a7173a960b2c00b"
+    },
+    {
+      "frame": 7,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        1,
+        1
+      ],
+      "source_bbox_in_column": [
+        129,
+        453,
+        338,
+        714
+      ],
+      "lift_px": 0,
+      "sha256": "f2e66bd162082f6fc4469533da6e068dcc9e7ce1c78a1b5dad7a64ecc878df41"
+    },
+    {
+      "frame": 8,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        2,
+        1
+      ],
+      "source_bbox_in_column": [
+        109,
+        435,
+        305,
+        713
+      ],
+      "lift_px": 0,
+      "sha256": "18dcdf7132e3b495bf2245ea7358b1940669bd4db3a54a00dc46b838b4d6cdba"
+    },
+    {
+      "frame": 9,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        3,
+        1
+      ],
+      "source_bbox_in_column": [
+        81,
+        428,
+        284,
+        692
+      ],
+      "lift_px": 0,
+      "sha256": "21568892c7eee57da6a44727716f5693bf3da4d522038ad81be63b23b0be7b28"
+    },
+    {
+      "frame": 10,
+      "sheet": "maria-poses-01-10.png",
+      "cell": [
+        4,
+        1
+      ],
+      "source_bbox_in_column": [
+        66,
+        429,
+        300,
+        719
+      ],
+      "lift_px": 16,
+      "sha256": "82067c2f78deb339535b4a38fbd405120db2caf98316cc9067c45a206cb3843b"
+    },
+    {
+      "frame": 11,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        0,
+        0
+      ],
+      "source_bbox_in_column": [
+        37,
+        8,
+        339,
+        405
+      ],
+      "lift_px": 31,
+      "sha256": "4b1783ad4316d60b5c4d7a449aa7716ec4eb113da62b71da6671a293ad7364a0"
+    },
+    {
+      "frame": 12,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        1,
+        0
+      ],
+      "source_bbox_in_column": [
+        1,
+        13,
+        382,
+        393
+      ],
+      "lift_px": 44,
+      "sha256": "bc919c842aaad1844bcd02294c400d4ad65736ec178afa3a89720519b1229997"
+    },
+    {
+      "frame": 13,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        2,
+        0
+      ],
+      "source_bbox_in_column": [
+        23,
+        13,
+        361,
+        388
+      ],
+      "lift_px": 56,
+      "sha256": "7ff98dc8356a15ae2757b3ece04f66007bed5fb21a369b6bb60e5aa0519bad1d"
+    },
+    {
+      "frame": 14,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        3,
+        0
+      ],
+      "source_bbox_in_column": [
+        0,
+        14,
+        339,
+        395
+      ],
+      "lift_px": 67,
+      "sha256": "79d06f7f7b0dd50fa6f332bd6538c2a288abc1fd4d2d66d18c8fb7bd45977b6a"
+    },
+    {
+      "frame": 15,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        4,
+        0
+      ],
+      "source_bbox_in_column": [
+        47,
+        36,
+        369,
+        364
+      ],
+      "lift_px": 77,
+      "sha256": "80c15d5a8979e843060c0cd0c97d215f15aa1189a5d8ee2cde1848b1fcc13f58"
+    },
+    {
+      "frame": 16,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        0,
+        1
+      ],
+      "source_bbox_in_column": [
+        37,
+        407,
+        358,
+        736
+      ],
+      "lift_px": 85,
+      "sha256": "3bcf7614dca81a5c0304c77aadd92ed5d6ad6219fb6dfe067ed0a741add82ec5"
+    },
+    {
+      "frame": 17,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        1,
+        1
+      ],
+      "source_bbox_in_column": [
+        66,
+        407,
+        324,
+        727
+      ],
+      "lift_px": 91,
+      "sha256": "cb8e2905f26f35d20a6075e114ee79b465e26f6c2e5f11986d9eadd1b5c58524"
+    },
+    {
+      "frame": 18,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        2,
+        1
+      ],
+      "source_bbox_in_column": [
+        65,
+        397,
+        342,
+        731
+      ],
+      "lift_px": 97,
+      "sha256": "bbbe3fa19435af831aaa1b10607a17e8efae0148e6cb3a3b42f523832100ec35"
+    },
+    {
+      "frame": 19,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        3,
+        1
+      ],
+      "source_bbox_in_column": [
+        42,
+        399,
+        314,
+        736
+      ],
+      "lift_px": 101,
+      "sha256": "ef4a03b8f9e87ce87bcf842b6063beb806d6d43f9a3aaa6a49a2305093ea0a0b"
+    },
+    {
+      "frame": 20,
+      "sheet": "maria-poses-11-20.png",
+      "cell": [
+        4,
+        1
+      ],
+      "source_bbox_in_column": [
+        30,
+        382,
+        367,
+        731
+      ],
+      "lift_px": 103,
+      "sha256": "25f04adaa4ea444d66b047cb53888b886e28ac50d947c10301fb463501c0b027"
+    },
+    {
+      "frame": 21,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        0,
+        0
+      ],
+      "source_bbox_in_column": [
+        36,
+        11,
+        374,
+        360
+      ],
+      "lift_px": 105,
+      "sha256": "a128da800511fa15d714ea16a1c0b77a99520f2b0504fe1560539925bdd244cb"
+    },
+    {
+      "frame": 22,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        1,
+        0
+      ],
+      "source_bbox_in_column": [
+        37,
+        12,
+        317,
+        383
+      ],
+      "lift_px": 105,
+      "sha256": "2d6437d56758606f775d40bf4ca2ca2f0295da5f88fe0035c4b870fc05e00583"
+    },
+    {
+      "frame": 23,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        2,
+        0
+      ],
+      "source_bbox_in_column": [
+        0,
+        24,
+        379,
+        384
+      ],
+      "lift_px": 103,
+      "sha256": "47fe098438b0da159baced813e55d5d38e151e9a63f8ce20e8d511a348e3d2bc"
+    },
+    {
+      "frame": 24,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        3,
+        0
+      ],
+      "source_bbox_in_column": [
+        46,
+        19,
+        330,
+        387
+      ],
+      "lift_px": 101,
+      "sha256": "fbd343fe85cff05d1c3860d236c151ea12e211122f32c162b2840843e30269b1"
+    },
+    {
+      "frame": 25,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        4,
+        0
+      ],
+      "source_bbox_in_column": [
+        0,
+        19,
+        379,
+        384
+      ],
+      "lift_px": 97,
+      "sha256": "589b26a79c2823a5d1b74372d382495b27675cf842b1966a54fbab070f79ae7f"
+    },
+    {
+      "frame": 26,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        0,
+        1
+      ],
+      "source_bbox_in_column": [
+        44,
+        393,
+        342,
+        760
+      ],
+      "lift_px": 91,
+      "sha256": "c3ebb78b9400fc88449e8f0229e5da2ee24b42f326840fed845316a888cc7f84"
+    },
+    {
+      "frame": 27,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        1,
+        1
+      ],
+      "source_bbox_in_column": [
+        43,
+        395,
+        343,
+        744
+      ],
+      "lift_px": 85,
+      "sha256": "6a459dc06f6518258f82aae6a2e30de714db4c4b34225959f20a3696a9c9f44c"
+    },
+    {
+      "frame": 28,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        2,
+        1
+      ],
+      "source_bbox_in_column": [
+        28,
+        397,
+        344,
+        744
+      ],
+      "lift_px": 77,
+      "sha256": "6ea92cb330b5abe9da4fc8421177b5ecd88ef7ace708963db3edc999ab3ee8d0"
+    },
+    {
+      "frame": 29,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        3,
+        1
+      ],
+      "source_bbox_in_column": [
+        44,
+        397,
+        360,
+        763
+      ],
+      "lift_px": 67,
+      "sha256": "d24999587244ac736f0745038a192aeb2dba221bbee45a8e823dfbd15b320a8b"
+    },
+    {
+      "frame": 30,
+      "sheet": "maria-poses-21-30.png",
+      "cell": [
+        4,
+        1
+      ],
+      "source_bbox_in_column": [
+        67,
+        398,
+        325,
+        780
+      ],
+      "lift_px": 56,
+      "sha256": "29b1d649589fc07eda3069b4ad4ab845e538969cf145fd90dfa4da0cc5729562"
+    },
+    {
+      "frame": 31,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        0,
+        0
+      ],
+      "source_bbox_in_column": [
+        20,
+        14,
+        367,
+        398
+      ],
+      "lift_px": 44,
+      "sha256": "8a1ce38f5f66a9514fe59bafd893d0c47ad2022c707c10cc7f09a710d9ee7f1e"
+    },
+    {
+      "frame": 32,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        1,
+        0
+      ],
+      "source_bbox_in_column": [
+        55,
+        24,
+        369,
+        398
+      ],
+      "lift_px": 31,
+      "sha256": "289af32b5492b834dc50e25222cef82f35fbba82c3d2832b55bfe95e41371002"
+    },
+    {
+      "frame": 33,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        2,
+        0
+      ],
+      "source_bbox_in_column": [
+        55,
+        50,
+        369,
+        398
+      ],
+      "lift_px": 16,
+      "sha256": "76ebd907b9503b5106ea1d5f708917bb5852e8d475f138d316f4aba168241fda"
+    },
+    {
+      "frame": 34,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        3,
+        0
+      ],
+      "source_bbox_in_column": [
+        63,
+        53,
+        376,
+        397
+      ],
+      "lift_px": 0,
+      "sha256": "a45df225266aedc408998466bd039f5ea6496a9bd9e4f2a9ffdd000c87ff82b9"
+    },
+    {
+      "frame": 35,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        4,
+        0
+      ],
+      "source_bbox_in_column": [
+        74,
+        68,
+        352,
+        397
+      ],
+      "lift_px": 0,
+      "sha256": "0206883eb55ef0e956d1d34750e2d2acab5d8673ce8d0ca02e3836376d84468e"
+    },
+    {
+      "frame": 36,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        0,
+        1
+      ],
+      "source_bbox_in_column": [
+        54,
+        440,
+        340,
+        759
+      ],
+      "lift_px": 0,
+      "sha256": "82f4de1d637c1ce78d36f2bef0b769a5147fd413b65697ac3c2e4f5df076e71a"
+    },
+    {
+      "frame": 37,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        1,
+        1
+      ],
+      "source_bbox_in_column": [
+        40,
+        474,
+        329,
+        759
+      ],
+      "lift_px": 0,
+      "sha256": "ece5066d13ac7719a84e8df50e33bac5dbe1e99da786d80943da5390cc623bfe"
+    },
+    {
+      "frame": 38,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        2,
+        1
+      ],
+      "source_bbox_in_column": [
+        30,
+        424,
+        357,
+        761
+      ],
+      "lift_px": 0,
+      "sha256": "bcf7e7f7aa856c96eb207aa4eb89e3658d56289feaa7585ab5f155ca8bb11c35"
+    },
+    {
+      "frame": 39,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        3,
+        1
+      ],
+      "source_bbox_in_column": [
+        69,
+        403,
+        328,
+        760
+      ],
+      "lift_px": 0,
+      "sha256": "f3f6c5dc6e90b09188b1129b39e5287ee2f916a95fd06f85ef85c9837ba186ae"
+    },
+    {
+      "frame": 40,
+      "sheet": "maria-poses-31-40.png",
+      "cell": [
+        4,
+        1
+      ],
+      "source_bbox_in_column": [
+        82,
+        400,
+        339,
+        761
+      ],
+      "lift_px": 0,
+      "sha256": "8e1bc4c94d53fbd3e3638b6ffb89f74dd53c536f86b60f8a9353c73193251bad"
+    },
+    {
+      "frame": 41,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        0,
+        0
+      ],
+      "source_bbox_in_column": [
+        96,
+        16,
+        354,
+        393
+      ],
+      "lift_px": 0,
+      "sha256": "95f2a8c0bdc884e0a48d69ab93e07824c2a55b8bb6cfdd2f52aebec039e3ad99"
+    },
+    {
+      "frame": 42,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        1,
+        0
+      ],
+      "source_bbox_in_column": [
+        56,
+        6,
+        305,
+        393
+      ],
+      "lift_px": 0,
+      "sha256": "8264f74892dc07a7419d4d3d51872c65923fe28c877025f0bf8be36e498be6ea"
+    },
+    {
+      "frame": 43,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        2,
+        0
+      ],
+      "source_bbox_in_column": [
+        59,
+        31,
+        338,
+        393
+      ],
+      "lift_px": 0,
+      "sha256": "ecc6a2ce00630edaffae723d3ec3ea9dc60b65c5c93499f8704ca31d77282427"
+    },
+    {
+      "frame": 44,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        3,
+        0
+      ],
+      "source_bbox_in_column": [
+        70,
+        24,
+        319,
+        393
+      ],
+      "lift_px": 0,
+      "sha256": "6cf2de989ef4a3029b2a287675c10f25475f35e19f0f1adbd0e02ea19d5e2824"
+    },
+    {
+      "frame": 45,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        4,
+        0
+      ],
+      "source_bbox_in_column": [
+        83,
+        23,
+        362,
+        393
+      ],
+      "lift_px": 0,
+      "sha256": "6d2debf3c239e66941c88b790484164a0607c5617cab952fe37731458237ca04"
+    },
+    {
+      "frame": 46,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        0,
+        1
+      ],
+      "source_bbox_in_column": [
+        81,
+        401,
+        351,
+        764
+      ],
+      "lift_px": 0,
+      "sha256": "aa171c8765339fd2069e576e4eabe5e0d32458bfabdd1b60478843588f0939c9"
+    },
+    {
+      "frame": 47,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        1,
+        1
+      ],
+      "source_bbox_in_column": [
+        78,
+        404,
+        324,
+        764
+      ],
+      "lift_px": 0,
+      "sha256": "d04a656e47b8ed1a2f80cdfd968f54f573788d228bc3408053212927e6260695"
+    },
+    {
+      "frame": 48,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        2,
+        1
+      ],
+      "source_bbox_in_column": [
+        75,
+        404,
+        305,
+        764
+      ],
+      "lift_px": 0,
+      "sha256": "5cb5e6c53d7157ec84be44e2cf2c0a7908f45970063bba2af90246a46ff1200f"
+    },
+    {
+      "frame": 49,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        3,
+        1
+      ],
+      "source_bbox_in_column": [
+        86,
+        404,
+        314,
+        764
+      ],
+      "lift_px": 0,
+      "sha256": "fe5fbd9684c24ebf4d5c6a8661d7ab86dc3309b42a7af7d176f70080775f0f7b"
+    },
+    {
+      "frame": 50,
+      "sheet": "maria-poses-41-50.png",
+      "cell": [
+        4,
+        1
+      ],
+      "source_bbox_in_column": [
+        95,
+        402,
+        326,
+        764
+      ],
+      "lift_px": 0,
+      "sha256": "884625579c732ed6a84ee953f2196724923aecd9652e871a17e4d5ad974f1491"
+    }
+  ]
+}

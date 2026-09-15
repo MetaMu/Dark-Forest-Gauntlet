@@ -1,0 +1,66 @@
+extends SceneTree
+const VFX=preload("res://scripts/realm_vfx.gd")
+var failures := 0
+var checks := 0
+func _initialize() -> void: call_deferred("run")
+func check(ok: bool, message: String) -> void:
+	checks+=1
+	if not ok: failures+=1
+	print("PASS: " if ok else "FAIL: ",message)
+func frames(count: int) -> void:
+	for i in count: await physics_frame
+func run() -> void:
+	var room=load("res://scenes/forest_encounter.tscn").instantiate()
+	root.add_child(room)
+	for i in 3: room.join_player(100+i)
+	room.encounter.begin()
+	check(VFX.light_envelope(0)==0 and VFX.light_envelope(1)==0,"Power light starts and ends dark")
+	check(VFX.light_envelope(.06)<VFX.light_envelope(.12) and VFX.light_envelope(.48)>VFX.light_envelope(.3),"Lighting sequence contains a flash and a softer echo")
+	var lighting=VFX.make(room.encounter,Vector3.ZERO,1.0)
+	for i in 12: lighting.light_pulse(Color.ORANGE,5.0,4.0)
+	check(get_nodes_in_group("power_lights").size()==VFX.MAX_POWER_LIGHTS,"Overlapping effect lights respect the six-light budget")
+	lighting._process(.08)
+	check(lighting.light_tracks[0].node.light_energy>0 and lighting.light_tracks[0].node.light_energy<=4,"Timed light illuminates without exceeding its peak")
+	lighting._process(.7)
+	check(lighting.light_tracks[0].node.light_energy==0,"Light reaches zero after its sequence")
+	lighting.queue_free();await frames(3)
+	check(get_nodes_in_group("power_lights").is_empty(),"Expired light nodes are removed")
+	for enemy in room.encounter.enemies: enemy.set_physics_process(false)
+	var spore=room.players[2];var light=room.players[3]
+	spore.position=Vector3(0,.1,1)
+	var target=room.encounter.enemies[0];target.position=Vector3(0,0,0)
+	var distant=room.encounter.enemies[2];distant.position=Vector3(18,0,-18)
+	await frames(2)
+	spore.try_power();await frames(3)
+	check(target.has_node("RootSnareVFX"),"Roots attach to an affected enemy")
+	check(not distant.has_node("RootSnareVFX"),"No roots on an out-of-range enemy")
+	check(target.health==85,"VFX leaves snare damage unchanged")
+	var roots=target.get_node("RootSnareVFX")
+	target.root_time=0;target.slow_time=1.0
+	await frames(3)
+	check(not roots.root_geometry.visible,"Visible roots end when root status ends")
+	spore.power_cooldown=0;spore.try_power();await frames(3)
+	check(target.get_node("RootSnareVFX")==roots,"Repeated snare reuses target effect")
+	check(roots.root_geometry.visible,"Refreshed snare restores roots")
+	target.root_time=0;target.slow_time=0;await frames(3)
+	check(not target.has_node("RootSnareVFX"),"Status effect cleans up after root and slow end")
+	spore.power_cooldown=0;spore.try_power();await frames(2)
+	target.take_damage(1000);await frames(3)
+	check(not is_instance_valid(target),"Target and attached roots clean up on death")
+	light.position=Vector3(0,.1,1);light.health=40
+	room.players[0].position=Vector3(1,.1,1);room.players[0].invulnerability=0;room.players[0].take_damage(1000)
+	light.try_power();await frames(3)
+	check(light.health==65,"Sanctuary keeps the same instant healing")
+	check(not room.players[0].downed,"Sanctuary visual follows a real revival")
+	room.players[1].position=Vector3(0,.1,3);room.players[1].try_power()
+	room.players[0].power_cooldown=0;room.players[0].try_power()
+	await frames(4)
+	check(get_nodes_in_group("realm_vfx").size()>0,"Overlapping classes create active effects")
+	room.encounter.finish(room.encounter.State.WON)
+	await frames(8)
+	check(get_nodes_in_group("realm_vfx").is_empty(),"Encounter end clears every world and attached effect")
+	check(get_nodes_in_group("power_lights").is_empty(),"Encounter end also removes spell lighting")
+	room.free();await frames(3)
+	check(get_nodes_in_group("realm_vfx").is_empty(),"No effect survives scene teardown")
+	print("VFX RESULT: %d checks, %d failures" % [checks,failures])
+	quit(1 if failures else 0)

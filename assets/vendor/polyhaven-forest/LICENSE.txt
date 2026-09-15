@@ -1,0 +1,1 @@
+Poly Haven assets: CC0 1.0 Universal. https://polyhaven.com/license and https://creativecommons.org/publicdomain/zero/1.0/ . See receipt.json for individual source URLs and integrity hashes.
