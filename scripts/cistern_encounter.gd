@@ -24,11 +24,6 @@ func spawn_guard(point: Vector3) -> void:
 	var enemy=Enemy.new();enemy.encounter=self;enemy.position=point
 	enemy.health=90;enemy.max_health=90;enemy.move_speed=1.8;enemy.strike_damage=20;enemy.strike_windup=.8
 	enemy.enemy_title="IRONROOT GUARD";add_child(enemy);enemies.append(enemy)
-	for child in enemy.get_children():
-		if child.get_script()==load("res://scripts/root_creature.gd"):
-			child.scale=Vector3(1.5,1.4,1.5)
-			var plate:=PrismMesh.new();plate.size=Vector3(1.1,.3,.55)
-			load("res://scripts/cistern_art.gd").form(child,plate,Vector3(0,.85,.35),Color("657f7c"))
 	enemy.label.position.y=2.7
 
 func spawn_mortar(point: Vector3) -> void:

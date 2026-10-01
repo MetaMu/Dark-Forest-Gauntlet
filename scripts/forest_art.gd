@@ -2,6 +2,8 @@ extends RefCounted
 ## Blender-built ruin modules and verified CC0 props; visual layer only.
 const RUINS := "res://assets/environment/moonlit-ruins/"
 const PROPS := "res://assets/vendor/quaternius-fantasy/"
+const ATLAS_CHEST := "res://assets/owner/atlas/gnome_chest_hinged.glb"
+const ChestInteraction = preload("res://scripts/atlas_chest.gd")
 static var cache: Dictionary = {}
 
 static func grade(node: Node, tint: Color) -> void:
@@ -109,7 +111,10 @@ static func build(room: Node3D) -> void:
 		lantern(room,point+Vector3(-2.8,0,-1),Color("b88bdf"))
 		ruin(room,"ruined_plinth",point+Vector3(-2.8,0,-1))
 	ruin(room,"sanctum_arch",Vector3(0,0,-20))
-	prop(room,"chest_wood",Vector3(-7.4,1.83,16.4),.7,PI/4)
+	var chest := model(room,ATLAS_CHEST,Vector3(-7.4,1.83,16.4),.7,PI/4)
+	var chest_interaction := ChestInteraction.new()
+	chest.add_child(chest_interaction)
+	chest_interaction.setup(room,chest)
 	prop(room,"potion_1",Vector3(8.55,1.83,15),.35)
 	prop(room,"book_7",Vector3(7.55,1.83,15),.25)
 	prop(room,"barrel",Vector3(-8,0,17),1.1)

@@ -1,5 +1,5 @@
 extends "res://scripts/clearing.gd"
-const Puppet=preload("res://scripts/gnome_puppet.gd")
+const Puppet=preload("res://scripts/gnome_rig.gd")
 const Forest=preload("res://scripts/forest_art.gd")
 const RealmEncounter=preload("res://scripts/realm_encounter.gd")
 var voices: Array[AudioStreamPlayer] = []

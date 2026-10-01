@@ -5,14 +5,14 @@ var cap: Node3D
 func _ready() -> void:
 	enemy_title="MORTARCAP";health=60;max_health=60;cooldown=2.0
 	super._ready()
-	for child in get_children():
-		if child.get_script()==load("res://scripts/root_creature.gd"): child.hide()
 	cap=Node3D.new();add_child(cap)
-	load("res://scripts/cistern_art.gd").mushroom(cap,Vector3.ZERO,1.0,true)
 	label.position.y=2.8;label.modulate=Color("d5ed85")
 
 func _physics_process(delta: float) -> void:
-	if dead or encounter.state!=encounter.State.COMBAT: return
+	if dead:
+		super._physics_process(delta)
+		return
+	if encounter.state!=encounter.State.COMBAT: return
 	cooldown-=delta;root_time=maxf(0,root_time-delta);slow_time=maxf(0,slow_time-delta);hit_flash=maxf(0,hit_flash-delta)
 	cap.scale=Vector3(1,1+.06*sin(Time.get_ticks_msec()*.004),1)
 	if root_time>0 or stagger>0:
@@ -27,6 +27,7 @@ func _physics_process(delta: float) -> void:
 		var bomb=load("res://scripts/spore_bomb.gd").new()
 		bomb.encounter=encounter;bomb.caster=self;bomb.position=target.position;bomb.position.y=.02
 		encounter.add_child(bomb);windup=1.2;cooldown=4.8
+		if has_combat_clips(): creature_visual.begin_attack(1.2)
 		return
 	var destination: Vector3=target.position
 	if offset.length()<4.0: destination=position-offset.normalized()*3

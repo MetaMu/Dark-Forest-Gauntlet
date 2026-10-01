@@ -1,4 +1,5 @@
-param([switch]$PowerFX,[switch]$KeyboardCoop,[switch]$MagicSequence,[switch]$LevelTwo,[switch]$Celebration,[switch]$StudioVFX,[switch]$DynamicMaria)
+param([switch]$PowerFX,[switch]$KeyboardCoop,[switch]$MagicSequence,[switch]$LevelTwo,[switch]$Celebration,[switch]$StudioVFX,[switch]$DynamicMaria,[switch]$RigOverhaul)
+if($RigOverhaul){$DynamicMaria=$true}
 if($DynamicMaria){$StudioVFX=$true}
 if($StudioVFX){$Celebration=$true}
 if($Celebration){$LevelTwo=$true}
@@ -11,6 +12,7 @@ $folder=Join-Path $projectRoot $(if($LevelTwo){'builds/Level-Two-Playtest'}elsei
 if($Celebration){$folder=Join-Path $projectRoot 'builds/Celebration-Playtest'}
 if($StudioVFX){$folder=Join-Path $projectRoot 'builds/Studio-VFX-Playtest'}
 if($DynamicMaria){$folder=Join-Path $projectRoot 'builds/Dynamic-Maria-Playtest'}
+if($RigOverhaul){$folder=Join-Path $projectRoot 'builds/3D-Overhaul-Playtest'}
 New-Item -ItemType Directory -Force $folder | Out-Null
 $engine=Join-Path $PSScriptRoot 'godot/Godot_v4.7.2-stable_win64_console.exe'
 $log=Join-Path $projectRoot $(if($LevelTwo){'artifacts/level-two/export.log'}elseif($MagicSequence){'artifacts/magic-sequence/export.log'}elseif($KeyboardCoop){'artifacts/keyboard-coop/export.log'}elseif($PowerFX){'artifacts/power-fx-v3/export.log'}else{'artifacts/art-upgrade/export.log'})
@@ -209,12 +211,22 @@ if($DynamicMaria){
  Copy-Item -LiteralPath $campaignLog -Destination (Join-Path $folder 'maria-campaign-verification.log')
  $files=Get-ChildItem -LiteralPath $folder -File | Where-Object Name -ne 'manifest.json'
 }
+if($RigOverhaul){
+ Copy-Item -LiteralPath (Join-Path $projectRoot 'artifacts/overhaul/gameplay.png') -Destination (Join-Path $folder 'PREVIEW.png')
+ '@echo off', 'cd /d "%~dp0"', 'start "Battle Rigs" "DarkForestGauntlet.exe" --main-pack DarkForestGauntlet.pck res://scenes/rig_showcase.tscn' | Set-Content (Join-Path $folder 'Watch-Battle-Rigs.cmd')
+ $rigLog=Join-Path $projectRoot 'artifacts/overhaul/packaged-rigs.log'
+ & $engine --main-pack (Join-Path $folder 'DarkForestGauntlet.pck') --script (Join-Path $projectRoot 'tests/rig_regression.gd') --fixed-fps 60 --position -2000,-2000 --quit-after 1200 *> $rigLog
+ if($LASTEXITCODE -ne 0 -or (Get-Content $rigLog -Raw) -notmatch 'RIG RESULT: 57 checks, 0 failures' -or (Get-Content $rigLog -Raw) -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)'){throw 'Packaged rig checks failed'}
+ Add-Content (Join-Path $folder 'README.txt') "`n3D OVERHAUL: Four realm combatants now use shared 52-bone 3D rigs. Universal joins them in Watch-Battle-Rigs.cmd. All four Atlas enemies and the rear-hinged chest are integrated. Player animation uses a 12-pose-per-second cadence."
+ $files=Get-ChildItem -LiteralPath $folder -File | Where-Object Name -ne 'manifest.json'
+}
 $manifest=@($files | ForEach-Object { @{file=$_.Name;bytes=$_.Length;sha256=(Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()} })
 $manifest | ConvertTo-Json -Depth 4 | Set-Content (Join-Path $folder 'manifest.json')
 $archive=Join-Path $projectRoot $(if($LevelTwo){'builds/Dark-Forest-Gauntlet-Level-Two.zip'}elseif($MagicSequence){'builds/Dark-Forest-Gauntlet-Magic-Sequence.zip'}elseif($KeyboardCoop){'builds/Dark-Forest-Gauntlet-Keyboard-Coop.zip'}elseif($PowerFX){'builds/Dark-Forest-Gauntlet-Power-FX-v3.zip'}else{'builds/Dark-Forest-Gauntlet-Moonlit-Ruins.zip'})
 if($Celebration){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-Celebration.zip'}
 if($StudioVFX){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-Studio-VFX.zip'}
 if($DynamicMaria){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-Dynamic-Maria.zip'}
+if($RigOverhaul){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-3D-Overhaul.zip'}
 Compress-Archive -Path (Join-Path $folder '*') -DestinationPath $archive -Force
 $zip=[IO.Compression.ZipFile]::OpenRead($archive)
 try {

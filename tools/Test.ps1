@@ -54,3 +54,16 @@ $studioResult | Write-Output
 if ($studioExit -ne 0 -or ($studioResult -join "`n") -notmatch 'STUDIO VFX RESULT: 12 checks, 0 failures' -or ($studioResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
     throw 'Studio particle placement, timing and crystal checks failed.'
 }
+$rootlingResult = & $engine --path $projectRoot --script tests/rootling_animation_regression.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1200 2>&1
+$rootlingExit = $LASTEXITCODE
+$rootlingResult | Write-Output
+if ($rootlingExit -ne 0 -or ($rootlingResult -join "`n") -notmatch 'ROOTLING ANIMATION RESULT: 17 checks, 0 failures' -or ($rootlingResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw 'Atlas Rootling animation checks failed.'
+}
+
+$rigResult = & $engine --path $projectRoot --script tests/rig_regression.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1200 2>&1
+$rigExit = $LASTEXITCODE
+$rigResult | Write-Output
+if ($rigExit -ne 0 -or ($rigResult -join "`n") -notmatch 'RIG RESULT: 57 checks, 0 failures' -or ($rigResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw '3D character and enemy rig checks failed.'
+}

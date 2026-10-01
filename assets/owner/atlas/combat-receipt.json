@@ -1,0 +1,24 @@
+{
+  "source": "Owner Atlas enemy meshes and previously authorized Mixamo rigs/walk clips",
+  "credits_spent": 0,
+  "models": [
+    {
+      "file": "ironroot-guard-combat.glb",
+      "source_sha256": "7ff04cc723d39b9390f60559eb34384c8ea8b7ea1d94edbf860835d6746e2864",
+      "sha256": "33710b69a6c82da7ac05aeee3ce9fab3b9e08df02ccb6df8074fa25cbfd34ed7",
+      "animation_source": "Existing Mixamo walk; locally authored skeletal idle, signature attack, hit, death"
+    },
+    {
+      "file": "mortarcap-combat.glb",
+      "source_sha256": "65f52efc719d63a1b2697a50537d12739dcb1a89e7dd7b5851ec06981fcd372f",
+      "sha256": "2523ccc42623aee3d443187bac9f867c9f1c28131f790c35de8e9bfdea885868",
+      "animation_source": "Existing Mixamo walk; locally authored skeletal idle, signature attack, hit, death"
+    },
+    {
+      "file": "root-heart-combat.glb",
+      "source_sha256": "67db5ee53a5ee8c44e5c6b0263c4fbb8fa6902095c1ae511d309ba7a7cf4c30a",
+      "sha256": "d60225d966fd972a055af9400a705017ad357203a8620e5549530b29a9f410de",
+      "animation_source": "Existing Mixamo walk; locally authored skeletal idle, signature attack, hit, death"
+    }
+  ]
+}

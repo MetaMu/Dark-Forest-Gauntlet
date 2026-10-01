@@ -23,6 +23,9 @@ var move_speed := 2.3
 var strike_damage := 12.0
 var strike_windup := .55
 var spawn_delay := 5.0
+var creature_visual: Node3D
+var attack_recovery := 0.0
+var death_time_remaining := -1.0
 
 func _ready() -> void:
 	collision_layer = 2
@@ -55,13 +58,20 @@ func _ready() -> void:
 		mesh.hide()
 		var creature = load("res://scripts/root_creature.gd").new()
 		add_child(creature)
+		creature_visual = creature
 		label.position.y = 3.2 if is_heart else 1.8
 		label.font_size = 24
 		label.pixel_size = 0.01
 		update_label()
 
 func _physics_process(delta: float) -> void:
-	if dead or encounter == null or encounter.state != encounter.State.COMBAT:
+	if dead:
+		if death_time_remaining >= 0.0:
+			death_time_remaining -= delta
+			if death_time_remaining < 0.0:
+				queue_free()
+		return
+	if encounter == null or encounter.state != encounter.State.COMBAT:
 		return
 	cooldown -= delta
 	slow_time = maxf(0.0,slow_time-delta)
@@ -79,6 +89,7 @@ func _physics_process(delta: float) -> void:
 	if is_heart:
 		if cooldown <= 0.0:
 			cooldown = spawn_delay
+			if has_combat_clips(): creature_visual.begin_attack(.8)
 			encounter.spawn_rootling(position + Vector3(1.4, 0, 0))
 		return
 	if root_time>0.0:
@@ -86,13 +97,20 @@ func _physics_process(delta: float) -> void:
 		windup=-1.0
 		return
 	if windup >= 0.0:
+		velocity = Vector3.ZERO
 		windup -= delta
 		if windup <= 0.0:
 			if is_instance_valid(target) and not target.downed and position.distance_to(target.position) < 1.5:
 				target.take_damage(strike_damage)
 			windup = -1.0
+			if has_combat_clips():
+				attack_recovery = 0.25
 			cooldown = 1.0
 			material.emission_enabled = false
+		return
+	if attack_recovery > 0.0:
+		attack_recovery = maxf(0.0, attack_recovery - delta)
+		velocity = Vector3.ZERO
 		return
 	target = encounter.nearest_survivor(position)
 	if target == null:
@@ -103,6 +121,9 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector3.ZERO
 		if cooldown <= 0.0:
 			windup = strike_windup
+			velocity = Vector3.ZERO
+			if has_combat_clips():
+				creature_visual.begin_attack(strike_windup)
 			material.emission_enabled = true
 			material.emission = Color("f44d35")
 	else:
@@ -137,12 +158,25 @@ func take_damage(amount: float, source: Vector3 = Vector3.INF) -> void:
 		knockback = away.normalized() * 11.0
 		stagger = 0.5
 		windup = -1.0
+		attack_recovery = 0.0
 		cooldown = 0.9
 		repath = 0.0
 	update_label()
 	if health <= 0.0:
 		dead = true
-		queue_free()
+		if has_combat_clips():
+			death_time_remaining = 1.5
+			creature_visual.begin_death()
+			label.hide()
+			collision_layer = 0
+			collision_mask = 0
+		else:
+			queue_free()
+	elif has_combat_clips():
+		creature_visual.begin_hit()
+
+func has_combat_clips() -> bool:
+	return is_instance_valid(creature_visual) and creature_visual.has_method("supports_combat_clips") and creature_visual.supports_combat_clips()
 
 func update_label() -> void:
 	if label != null:

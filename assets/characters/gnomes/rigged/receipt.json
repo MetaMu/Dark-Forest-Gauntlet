@@ -1,0 +1,83 @@
+{
+  "source": "Owner-supplied KnowME Finished Rig v4; existing project realm modeling sheets",
+  "method": "Preserved skinned body and 52-bone skeleton; locally tailored cap, eyes, costumes/accessories; locally authored combat clips",
+  "license": "Owner project artwork; original source rights retained; no new third-party license asserted",
+  "credits_spent": 0,
+  "models": [
+    {
+      "id": "universal",
+      "sha256": "98a3d09360559e19202b6653d5d81b1299eb3dc5ef68ea41f619a6641e199738",
+      "triangles": 40293,
+      "clips": [
+        "Idle",
+        "Walk",
+        "Attack",
+        "Cast",
+        "Hit",
+        "Down"
+      ],
+      "bones": 52,
+      "source_sha256": "9ec02b1754d045a8e0963cb400a4cc3233e1b7faf60a51bf4793b648c01e0a48"
+    },
+    {
+      "id": "ember_hollow",
+      "sha256": "0c08efb7378c7549f47af139e095086c6de662040de96aa42e978f1c84c42aa1",
+      "triangles": 44037,
+      "clips": [
+        "Idle",
+        "Walk",
+        "Attack",
+        "Cast",
+        "Hit",
+        "Down"
+      ],
+      "bones": 52,
+      "source_sha256": "9ec02b1754d045a8e0963cb400a4cc3233e1b7faf60a51bf4793b648c01e0a48"
+    },
+    {
+      "id": "ironbark",
+      "sha256": "fe28db0135cc80396c7f115d9ce3fac02020c0c841a3e678873efa8a2d6a42af",
+      "triangles": 44013,
+      "clips": [
+        "Idle",
+        "Walk",
+        "Attack",
+        "Cast",
+        "Hit",
+        "Down"
+      ],
+      "bones": 52,
+      "source_sha256": "9ec02b1754d045a8e0963cb400a4cc3233e1b7faf60a51bf4793b648c01e0a48"
+    },
+    {
+      "id": "spore_grove",
+      "sha256": "579b651ad4139eac2f81144d34f15897c424304f2da73fda53acb4e9846c0a12",
+      "triangles": 42441,
+      "clips": [
+        "Idle",
+        "Walk",
+        "Attack",
+        "Cast",
+        "Hit",
+        "Down"
+      ],
+      "bones": 52,
+      "source_sha256": "9ec02b1754d045a8e0963cb400a4cc3233e1b7faf60a51bf4793b648c01e0a48"
+    },
+    {
+      "id": "light_realm",
+      "sha256": "90ae33e0bf7629d306a83f3f63271fb414dfe213dd13d4367601a1cb439a2885",
+      "triangles": 41509,
+      "clips": [
+        "Idle",
+        "Walk",
+        "Attack",
+        "Cast",
+        "Hit",
+        "Down"
+      ],
+      "bones": 52,
+      "source_sha256": "9ec02b1754d045a8e0963cb400a4cc3233e1b7faf60a51bf4793b648c01e0a48"
+    }
+  ]
+}

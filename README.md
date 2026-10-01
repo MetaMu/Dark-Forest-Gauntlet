@@ -4,6 +4,9 @@ A playable local co-op forest encounter in Godot 4.7.2: choose a gnome, destroy 
 
 ## Play
 
+**3D character overhaul (October 1):** the four playable realm gnomes now use 52-bone 3D rigs with stepped idle, walk, attack, cast, hit, and downed animations. Universal is included in **Play-Battle-Rigs.cmd**. The original sprite sheets remain available. All four Atlas enemy types now use animated models, and the corrected rear-hinged chest is installed. The tested unpacked Windows build is in **builds/3D-Overhaul-Playtest/**. ZIP creation is pending additional free disk space. These are locally tailored derivatives of the shared KnowME body and rig, not newly generated Atlas player meshes.
+
+
 **Latest: Maria's fifty-pose victory animation is in the game.** Use **builds/Dark-Forest-Gauntlet-Dynamic-Maria.zip**. Escape level two to see the new articulated stop-motion celebration on the parchment scroll. Includes both levels, keyboard co-op, and the repaired Studio magic effects. [Animation notes](docs/MARIA_DYNAMIC_CELEBRATION.md).
 
 **Game Studio magic repair:** corrected projectile sparks, faceted shard wakes and Spore crystals are included. **Watch-Powers.cmd** demonstrates the four powers. [Changes, credits and renderer evidence](docs/STUDIO_VFX_UPDATE.md).

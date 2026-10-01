@@ -46,7 +46,7 @@ func run() -> void:
 	check(not target.has_node("RootSnareVFX"),"Status effect cleans up after root and slow end")
 	spore.power_cooldown=0;spore.try_power();await frames(2)
 	target.take_damage(1000);await frames(3)
-	check(not is_instance_valid(target),"Target and attached roots clean up on death")
+	check(target.dead and target.collision_layer == 0 and target.get_node_or_null("RootSnareVFX") == null,"Death disables collisions and clears roots while its pose finishes")
 	light.position=Vector3(0,.1,1);light.health=40
 	room.players[0].position=Vector3(1,.1,1);room.players[0].invulnerability=0;room.players[0].take_damage(1000)
 	light.try_power();await frames(3)

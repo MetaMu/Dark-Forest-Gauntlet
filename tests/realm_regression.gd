@@ -21,7 +21,7 @@ func run() -> void:
 	check(player.class_id==1,"Lobby class selection changes player")
 	room.join_player(100);room.join_player(101);room.join_player(102)
 	check(room.players.size()==4,"Four sprite players join")
-	check(room.players[3].get_node("GnomePuppet").sprites.size()==3,"Gnomes have articulated paper parts")
+	check(room.players[3].get_node("GnomePuppet").skeleton.get_bone_count()==52,"Gnomes have the shared articulated 3D skeleton")
 	room.encounter.begin()
 	room.select_class(-1,3)
 	check(player.class_id==1,"Class selection locks during combat")

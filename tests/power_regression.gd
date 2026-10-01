@@ -79,11 +79,11 @@ func run() -> void:
 	check(not player.try_power(),"Downed player cannot cast powers")
 	var puppet=player.get_node("GnomePuppet")
 	for i in 5: puppet._process(0.1)
-	check(is_equal_approx(puppet.body_pose.rotation.z,PI/2),"Downed gnome lies sideways")
+	check(puppet.current_clip == "Down","Downed gnome plays skeletal fall")
 	check(puppet.scale.is_equal_approx(Vector3.ONE),"Fall preserves full body proportions")
 	player.revive()
 	for i in 5: puppet._process(0.1)
-	check(is_zero_approx(puppet.body_pose.rotation.z),"Revive returns gnome upright")
+	check(puppet.current_clip != "Down","Revive leaves the downed animation")
 	check(puppet.weapon.kind==3,"Weapon updates with selected class")
 	var event:=InputEventKey.new()
 	event.physical_keycode=KEY_SHIFT;event.pressed=true
