@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-14",
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "assets": [
+    {
+      "file": "player-hud-frame.png",
+      "prompt": "Production 2D fantasy game HUD asset, single horizontal illustrated player status frame, wide 4:1 aspect ratio on truly transparent alpha exterior. Ancient woodland gnome craftsmanship: slender carved dark walnut branches, aged brass trim, tiny moss-green leaves and small gold rune etchings. Left side circular empty medallion socket for a separate realm emblem, around 18% width. Right 75% contains an uncluttered very dark warm brown backing with THREE long blank zones: thin title space at top, ONE long narrow empty horizontal health-bar trough through the middle, thin subtitle area below. The health trough must be straight and unobstructed, running from x=25% to x=92%, y=44% to y=61%. Outer silhouette organic tapered leaf tips, no rectangular bounding box. Clean polished hand-painted high-end RPG interface art, subtle realistic bevel highlights. Compact low-profile design, no massive pillars or scroll rollers. NO text, NO numbers, NO filled health bar, NO character portrait. Precisely front facing, no perspective. Generous transparent margin outside ornament, whole object in frame. Will be displayed at 300 by 100 pixels; favor clear bold shapes over tiny detail.",
+      "sha256": "f408339c4f1182001467b3f5b4bfd71fcb7affde2fe1685757ce672ef201945d"
+    },
+    {
+      "file": "quest-plaque.png",
+      "prompt": "Production fantasy game HUD asset, ONE small horizontal quest title plaque, 5:1 wide aspect ratio, truly transparent alpha outside organic silhouette. Ancient gnomish forest craftsmanship matching a hand-painted RPG: gently curved worn ivory parchment strip held by thin carved walnut twigs and antique brass end caps, a few moss-green leaf ornaments at either end, tiny diamond runes at corners. Central 80 percent parchment is clean and completely blank, subtle paper grain, suitable for two lines of live dark text. Slender elegant low-profile ornament, no huge wooden rollers, no heavy square backdrop, NO text, NO numbers, NO symbols in center. Front-facing orthographic, entire isolated object visible, crisp silhouette. Designed to remain readable at 360 by 72 pixels.",
+      "sha256": "895d94320bf001fa0f8fc9b470dcc415cf5dc36673e4c4591617d4978b1cd942"
+    }
+  ]
+}

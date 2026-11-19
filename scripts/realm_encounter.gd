@@ -19,17 +19,18 @@ func collect_pear() -> void:
 func realm_power(player: CharacterBody3D) -> void:
 	if state!=State.COMBAT or player.downed: return
 	var color: Color=room.COLORS[player.class_id]
-	room.prepare_attack(player)
+	if player.cast_elapsed<0.0: room.prepare_attack(player)
+	var aim: Vector2=player.power_aim()
 	room.play_sound("power",-14.0)
 	VFX.cast_flare(player,color)
 	match player.class_id:
 		0:
-			player.dash_direction=Vector3(player.last_input.x+player.last_input.y,0,player.last_input.y-player.last_input.x).normalized()
+			player.dash_direction=Vector3(aim.x+aim.y,0,aim.y-aim.x).normalized()
 			player.dash_time=0.18
 			player.invulnerability=maxf(player.invulnerability,0.3)
 			VFX.dash(self,player)
 		1:
-			var direction:=Vector3(player.last_input.x+player.last_input.y,0,player.last_input.y-player.last_input.x).normalized()
+			var direction:=Vector3(aim.x+aim.y,0,aim.y-aim.x).normalized()
 			for angle in [-0.17,0.0,0.17]:
 				var bolt=Projectile.new()
 				bolt.direction=direction.rotated(Vector3.UP,angle)
@@ -40,7 +41,8 @@ func realm_power(player: CharacterBody3D) -> void:
 				bolt.lifetime=0.7
 				bolt.color=color
 				bolt.encounter=self
-				bolt.position=player.position+Vector3.UP*0.7
+				var rig=player.get_node_or_null("GnomePuppet")
+				bolt.position=to_local(rig.cast_origin()) if rig!=null and rig.has_method("cast_origin") else player.position+Vector3.UP*.7
 				add_child(bolt)
 		2:
 			VFX.snare_cast(self,player.position)

@@ -148,6 +148,7 @@ func join_player(device: int) -> void:
 	player.add_child(pulse)
 	player.attack_visual = pulse
 	var marker := Label3D.new()
+	marker.font=preload("res://scripts/gnomish_ui.gd").body()
 	marker.text = "P%d" % (slot + 1)
 	marker.position.y = 2.0
 	marker.font_size = 48

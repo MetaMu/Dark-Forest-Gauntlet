@@ -28,6 +28,7 @@ func run() -> void:
 	await settle()
 	check(player.try_power(),"Ember power starts")
 	check(not player.try_power(),"Power cannot bypass cooldown")
+	player.advance_cast(player.CAST_RELEASE)
 	check(player.invulnerability>=0.3,"Dash grants brief protection")
 	await settle(15)
 	check(player.position.z<3.0,"Ember dash moves through physics")
@@ -37,14 +38,14 @@ func run() -> void:
 	player.last_input=Vector2(1,-1)
 	player.power_cooldown=0
 	await settle()
-	player.try_power()
+	player.try_power();player.advance_cast(player.CAST_RELEASE)
 	await settle(15)
 	check(player.position.z>10.4,"Dash cannot pass through wall")
 	player.position=Vector3(0,0,4)
 	player.class_id=1;player.power_cooldown=0
 	heart.health=100
 	await settle()
-	player.try_power()
+	player.try_power();player.advance_cast(player.CAST_RELEASE)
 	var projectiles:=0
 	for child in room.encounter.get_children():
 		if child.get_script()==load("res://scripts/realm_projectile.gd"):
@@ -56,7 +57,7 @@ func run() -> void:
 	room.encounter.spawn_rootling(Vector3(0,0,2))
 	rootling=room.encounter.enemies.back()
 	player.class_id=2;player.power_cooldown=0
-	player.try_power()
+	player.try_power();player.advance_cast(player.CAST_RELEASE)
 	check(rootling.root_time==2.5,"Spore power applies root duration")
 	check(rootling.health==15,"Snare deals initial damage")
 	var origin: Vector3=rootling.position
@@ -65,14 +66,14 @@ func run() -> void:
 	player.class_id=3;player.power_cooldown=0;player.health=50
 	ally.position=player.position+Vector3(1,0,0)
 	ally.invulnerability=0;ally.take_damage(1000)
-	player.try_power()
+	player.try_power();player.advance_cast(player.CAST_RELEASE)
 	check(player.health==75,"Sanctuary heals living caster")
 	check(not ally.downed and ally.health==40,"Sanctuary revives nearby fallen ally")
 	check(player.invulnerability>=1.0,"Sanctuary grants brief protection")
 	player.power_cooldown=0
 	ally.position=Vector3(18,0,15)
 	ally.invulnerability=0;ally.take_damage(1000)
-	player.try_power()
+	player.try_power();player.advance_cast(player.CAST_RELEASE)
 	check(ally.downed,"Sanctuary cannot revive a distant ally")
 	player.invulnerability=0;player.take_damage(1000)
 	player.power_cooldown=0

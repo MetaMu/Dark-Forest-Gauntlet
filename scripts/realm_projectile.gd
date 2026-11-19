@@ -15,13 +15,18 @@ var hit_ids: Array[int] = []
 func _ready() -> void:
 	var mesh := MeshInstance3D.new()
 	var shape := PrismMesh.new()
-	shape.size=Vector3(.20,.12,.62)
+	shape.size=Vector3(.16,.10,.9) if nature else Vector3(.20,.12,.62)
 	mesh.mesh = shape
+	if nature:
+		var tip:=CylinderMesh.new()
+		tip.top_radius=0.0;tip.bottom_radius=.09;tip.height=.75
+		tip.radial_segments=4;tip.rings=1
+		mesh.mesh=tip;mesh.rotation.x=-PI/2
 	mesh.material_override = FX.material(Color("e3ffb0") if nature else Color("fff0b0"))
 	add_child(mesh)
 	if direction.length_squared() > 0.0:
 		look_at(global_position + direction)
-	VFX.projectile_trail(encounter,self,color,.23 if nature else .14)
+	VFX.projectile_trail(encounter,self,color,.16 if nature else .14,nature)
 
 func _physics_process(delta: float) -> void:
 	if encounter.state != encounter.State.COMBAT:
@@ -30,8 +35,10 @@ func _physics_process(delta: float) -> void:
 	lifetime -= delta
 	var next := global_position + direction * speed * delta
 	var query := PhysicsRayQueryParameters3D.create(global_position, next, 1)
-	if not get_world_3d().direct_space_state.intersect_ray(query).is_empty():
-		VFX.impact(encounter, global_position, color,nature)
+	var wall_hit:=get_world_3d().direct_space_state.intersect_ray(query)
+	if not wall_hit.is_empty():
+		if nature: VFX.splinter_impact(encounter,wall_hit.position,direction)
+		else: VFX.impact(encounter, global_position, color,nature)
 		queue_free()
 		return
 	for enemy in encounter.enemies:
@@ -45,7 +52,8 @@ func _physics_process(delta: float) -> void:
 			hit_ids.append(enemy.get_instance_id())
 			enemy.take_damage(damage, source)
 			FX.number(encounter, enemy.global_position, str(int(damage)), color)
-			VFX.impact(encounter, enemy.global_position, color,nature)
+			if nature: VFX.splinter_impact(encounter,closest,direction)
+			else: VFX.impact(encounter, enemy.global_position, color,nature)
 			remaining_hits-=1
 			if remaining_hits<=0:
 				queue_free()

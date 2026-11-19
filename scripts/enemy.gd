@@ -48,6 +48,7 @@ func _ready() -> void:
 	mesh.material_override = material
 	add_child(mesh)
 	label = Label3D.new()
+	label.font=preload("res://scripts/gnomish_ui.gd").body()
 	label.position.y = shape.radius * 2.0 + 0.6
 	label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	label.font_size = 36
@@ -168,6 +169,7 @@ func take_damage(amount: float, source: Vector3 = Vector3.INF) -> void:
 			death_time_remaining = 1.5
 			creature_visual.begin_death()
 			label.hide()
+			if health_bar: health_bar.hide()
 			collision_layer = 0
 			collision_mask = 0
 		else:
@@ -181,8 +183,30 @@ func has_combat_clips() -> bool:
 func update_label() -> void:
 	if label != null:
 		if encounter != null and encounter.room.has_method("play_sound"):
-			label.text = ("ROOT HEART\n" if is_heart else "") + "▰".repeat(maxi(1,ceili(health/max_health*5)))
-			if not enemy_title.is_empty(): label.text=enemy_title+"\n"+"▰".repeat(maxi(1,ceili(health/max_health*5)))
-			label.modulate=Color("e38aad") if is_heart else Color("d3ce9f")
+			label.text = enemy_title if not enemy_title.is_empty() else ("Root Heart" if is_heart else "")
+			label.modulate=Color("edc9a1")
+			if health_bar == null:
+				health_bar=Sprite3D.new()
+				health_bar.billboard=BaseMaterial3D.BILLBOARD_ENABLED
+				health_bar.pixel_size=.008
+				add_child(health_bar)
+				var ornament:=Sprite3D.new()
+				var atlas:=AtlasTexture.new()
+				atlas.atlas=preload("res://assets/ui/gnomish/player-hud-frame.png")
+				atlas.region=Rect2(560,302,1420,115)
+				ornament.texture=atlas;ornament.pixel_size=1.7/1420.0
+				ornament.billboard=BaseMaterial3D.BILLBOARD_ENABLED
+				health_bar.add_child(ornament)
+			var fraction:=clampf(health/max_health,.001,.999)
+			var gradient:=Gradient.new()
+			gradient.interpolation_mode=Gradient.GRADIENT_INTERPOLATE_CONSTANT
+			gradient.offsets=PackedFloat32Array([0,fraction,1])
+			gradient.colors=PackedColorArray([Color("d88d99") if is_heart else Color("c2cf88"),Color("281e17"),Color("281e17")])
+			var texture:=GradientTexture2D.new()
+			texture.gradient=gradient;texture.width=184;texture.height=7
+			health_bar.texture=texture
+			health_bar.position.y=label.position.y-.22
+			health_bar.render_priority=2
+			health_bar.visible=health>0
 		else:
 			label.text = "%s  %d" % ["ROOT HEART" if is_heart else "Rootling", int(health)]

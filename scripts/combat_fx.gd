@@ -48,6 +48,7 @@ static func number(parent: Node3D, point: Vector3, value: String, color: Color) 
 	fx.lifetime = 0.7
 	fx.rise = 1.4
 	var label := Label3D.new()
+	label.font=preload("res://scripts/gnomish_ui.gd").body()
 	label.text = value
 	label.font_size = 48
 	label.pixel_size = 0.009

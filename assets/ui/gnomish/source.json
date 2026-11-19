@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-14",
+  "parchment": {
+    "tool": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Create a production game UI asset: ONE upright blank ancient gnomish parchment scroll panel, front-facing orthographic, aspect ratio 3:4. Warm ivory vellum center, softly worn and slightly irregular torn edges, rolled upper and lower rims with understated dark carved wooden finials. Tiny woodland knotwork and etched geometric gnomish rune ornaments ONLY in the outer corners and narrow edge border. Moss-green ink and antique bronze accents. Beautiful hand-painted fantasy game style, tactile paper grain but very low contrast clean central 80% left completely blank for live menu text. Symmetric overall, no perspective, no letters or text, no icon in the center, no scene, no table. Real transparent alpha background outside the scroll, generous clear padding, crisp silhouette. The panel will be used as a stretchable menu background in a dark forest game; keep details confined to edges. Save generated asset."
+  },
+  "font": {
+    "name": "Gnomish Elder",
+    "source": "tools/build_gnomish_font.py",
+    "description": "Original angular Latin display lettering, uppercase with lowercase mapped to the display capitals; no third-party font outlines."
+  },
+  "ornament": {
+    "source": "Original code-authored SVG diamond seal"
+  },
+  "files": [
+    {
+      "file": "assets/ui/gnomish/parchment-scroll.png",
+      "sha256": "46ce2caa5887e3deff14265abd0fd3d9f85fabfab9b3d9a95d238f14e54f9fc6"
+    },
+    {
+      "file": "assets/ui/gnomish/elder-seal.svg",
+      "sha256": "e38f4bac7adf21d92fffd2254760550ae6a8916b01a1c80f17823f8f7da87489"
+    },
+    {
+      "file": "assets/fonts/GnomishElder-Regular.ttf",
+      "sha256": "fadc6e12d3371979a897b3f5fee57ab6aa48fe66daf991d9d3fd83fb614ce7f9"
+    }
+  ]
+}

@@ -12,21 +12,22 @@ func _ready() -> void:
 	var ground:=MeshInstance3D.new();var plane:=PlaneMesh.new();plane.size=Vector2(30,20);ground.mesh=plane;var mat:=StandardMaterial3D.new();mat.albedo_color=Color("243e3b");ground.material_override=mat;add_child(ground)
 	for i in 5:
 		var actor=Player.new();actor.class_id=[4,0,1,2,3][i];actor.position.x=(i-2)*2.7;add_child(actor);actor.set_physics_process(false);actor.last_input=Vector2(-1,1)
-		var marker:=Label3D.new();marker.text=["UNIVERSAL","EMBER HOLLOW","IRONBARK","SPORE GROVE","LIGHT REALM"][i];marker.billboard=BaseMaterial3D.BILLBOARD_ENABLED;marker.font_size=28;marker.pixel_size=.007;actor.add_child(marker)
+		var marker:=Label3D.new();marker.text=["UNIVERSAL","EMBER HOLLOW","IRONBARK","SPORE GROVE","LIGHT REALM"][i];marker.position.y=2.8;marker.billboard=BaseMaterial3D.BILLBOARD_ENABLED;marker.font_size=28;marker.pixel_size=.007;actor.add_child(marker)
 		var rig=Rig.new();rig.name="GnomePuppet";actor.add_child(rig);actors.append(actor)
 	var canvas:=CanvasLayer.new();add_child(canvas);caption=Label.new();caption.position=Vector2(30,28);caption.add_theme_font_size_override("font_size",26);canvas.add_child(caption)
 func _process(delta: float) -> void:
 	elapsed+=delta
-	var next:=int(elapsed/2.0)%6
+	var next:=int(elapsed/3.2)%7
 	if next!=stage:
 		stage=next
-		caption.text="GNOME BATTLE RIGS  ·  "+["IDLE","WALK","ATTACK","CAST","HIT","DOWN / REVIVE"][stage]
+		caption.text="GNOME BATTLE RIGS  ·  "+["IDLE","MIXAMO WALK","MIXAMO RUN","ATTACK","2H MAGIC ATTACK 01","HIT","DOWN / REVIVE"][stage]
 		for actor in actors:
 			var rig=actor.get_node("GnomePuppet")
 			actor.downed=false;actor.velocity=Vector3.ZERO;actor.pending_attack=false;actor.power_cooldown=0
 			match stage:
 				1: actor.velocity=Vector3(1,0,0)
-				2: rig.play_clip("Attack");rig.action_remaining=1.9
-				3: rig.play_clip("Cast");rig.action_remaining=1.9
-				4: actor.health-=1
-				5: actor.downed=true
+				2: actor.velocity=Vector3(2.0,0,0)
+				3: rig.play_clip("Attack");rig.action_remaining=3.1
+				4: rig.play_clip("Cast");rig.action_remaining=3.1
+				5: actor.health-=1
+				6: actor.downed=true
