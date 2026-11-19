@@ -21,6 +21,16 @@ var stepped_combat := false
 var foot_clock := 0.0
 const POWER_COOLDOWNS := [7.0,9.0,10.0,14.0]
 var power_cooldown := 0.0
+# The source cast reaches its forward thrust at 1.2 seconds.
+const CAST_RELEASE := 1.2
+const CAST_DURATION := 2.7
+const Charge = preload("res://scripts/cast_charge.gd")
+var cast_elapsed := -1.0
+var cast_serial := 0
+var cast_class := -1
+var cast_direction := Vector2.ZERO
+var pending_power := false
+var cast_charge: Node3D
 var power_held := false
 var dash_time := 0.0
 var dash_direction := Vector3.ZERO
@@ -35,6 +45,7 @@ signal dash_finished(player)
 func _physics_process(delta: float) -> void:
 	attack_cooldown = maxf(0.0, attack_cooldown - delta)
 	power_cooldown=maxf(0.0,power_cooldown-delta)
+	advance_cast(delta)
 	var was_dashing:=dash_time>0.0
 	dash_time=maxf(0.0,dash_time-delta)
 	invulnerability = maxf(0.0, invulnerability - delta)
@@ -76,16 +87,57 @@ func _physics_process(delta: float) -> void:
 	power_held=power_down
 
 func try_power() -> bool:
-	if downed or not combat_enabled or power_cooldown>0.0 or not stepped_combat:
+	if downed or not combat_enabled or power_cooldown>0.0 or not stepped_combat or pending_power or class_id not in range(4):
 		return false
 	power_cooldown=POWER_COOLDOWNS[class_id]
-	attack_flash=0.32
-	power_requested.emit(self)
+	pending_attack=false
+	attack_windup=0.0
+	if get_parent().has_method("prepare_attack"): get_parent().prepare_attack(self)
+	cast_direction=last_input
+	cast_class=class_id
+	cast_serial+=1
+	cast_elapsed=0.0
+	pending_power=true
+	cast_charge=Charge.new()
+	add_child(cast_charge)
 	return true
 
+func clear_charge() -> void:
+	if is_instance_valid(cast_charge):
+		cast_charge.dispose()
+	cast_charge=null
+
+func cancel_cast() -> void:
+	if pending_power: power_cooldown=minf(power_cooldown,.75)
+	pending_power=false
+	cast_elapsed=-1.0
+	clear_charge()
+
+func advance_cast(delta: float) -> void:
+	if cast_elapsed<0.0: return
+	if downed or not combat_enabled or class_id!=cast_class:
+		cancel_cast()
+		return
+	var next_time:=cast_elapsed+delta
+	if pending_power and next_time>=CAST_RELEASE:
+		# Commit the exact release pose before sampling its hand position.
+		cast_elapsed=CAST_RELEASE
+		var rig=get_node_or_null("GnomePuppet")
+		if rig!=null and rig.has_method("sample_clip"): rig._process(0.0)
+		pending_power=false
+		clear_charge()
+		attack_flash=.32
+		power_requested.emit(self)
+	cast_elapsed=next_time
+	if cast_elapsed>=CAST_DURATION: cast_elapsed=-1.0
+
+func power_aim() -> Vector2:
+	return cast_direction if cast_elapsed>=0.0 else last_input
+
 func try_attack() -> bool:
-	if downed or not combat_enabled or attack_cooldown > 0.0:
+	if downed or not combat_enabled or attack_cooldown > 0.0 or pending_power:
 		return false
+	if cast_elapsed>=0.0: cancel_cast()
 	attack_cooldown = [0.55, 0.7, 1.1, 0.9][class_id] if stepped_combat else 0.5
 	if stepped_combat:
 		if get_parent().has_method("prepare_attack"):
@@ -100,6 +152,7 @@ func try_attack() -> bool:
 func take_damage(amount: float) -> void:
 	if downed or invulnerability > 0.0 or amount <= 0.0:
 		return
+	cancel_cast()
 	health = maxf(0.0, health - amount)
 	invulnerability = 0.6
 	if get_parent().has_method("play_sound"):

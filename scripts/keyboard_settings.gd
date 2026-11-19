@@ -1,4 +1,5 @@
 extends PanelContainer
+const UI=preload("res://scripts/gnomish_ui.gd")
 const Controls=preload("res://scripts/local_input.gd")
 const LABELS=["Left","Right","Up","Down","Attack","Power","Revive","Switch gnome"]
 var waiting_device:=0
@@ -8,12 +9,11 @@ var buttons: Array = []
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_CENTER)
-	offset_left=-375;offset_right=375;offset_top=-240;offset_bottom=240
-	var style:=StyleBoxFlat.new();style.bg_color=Color("101a20");style.border_color=Color("b09a63")
-	style.set_border_width_all(2);style.content_margin_left=24;style.content_margin_right=24;style.content_margin_top=18;style.content_margin_bottom=18
-	add_theme_stylebox_override("panel",style)
-	var stack:=VBoxContainer.new();stack.add_theme_constant_override("separation",12);add_child(stack)
-	var title:=Label.new();title.text="KEYBOARD CONTROLS";title.add_theme_font_size_override("font_size",24);stack.add_child(title)
+	offset_left=-405;offset_right=405;offset_top=-295;offset_bottom=295
+	theme=UI.theme()
+	add_theme_stylebox_override("panel",UI.scroll())
+	var stack:=VBoxContainer.new();stack.add_theme_constant_override("separation",8);add_child(stack)
+	var title:=Label.new();title.text="KEYBOARD CONTROLS";UI.heading(title,26);stack.add_child(title)
 	var columns:=HBoxContainer.new();columns.add_theme_constant_override("separation",20);stack.add_child(columns)
 	for team in 2:
 		var column:=VBoxContainer.new();column.size_flags_horizontal=Control.SIZE_EXPAND_FILL;columns.add_child(column)

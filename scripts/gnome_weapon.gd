@@ -1,5 +1,5 @@
 extends Node3D
-## Blender-exported equipment attached to the existing stepped pose rig.
+## Equipment fitted to the palm grip or casting back socket.
 var kind := -1
 var bow_string: Node3D
 var arrow: Node3D
@@ -28,7 +28,7 @@ func configure(id: int) -> void:
 	bow_string=null;arrow=null
 	match kind:
 		0:
-			var axe=Art.model(artwork,Art.PROPS+"axe_bronze.glb",Vector3(0,-.28,0),1.35)
+			var axe=Art.model(artwork,Art.PROPS+"axe_bronze.glb",Vector3(-.114,-.28,.0416),1.35)
 			axe.rotation.y=.35
 		1:
 			Art.ruin(artwork,"ironbark_bow",Vector3.ZERO)
@@ -67,4 +67,3 @@ func pose(windup: bool,releasing: bool,left: bool,down: bool,back: bool) -> void
 		2,3:
 			rotation.z=sign_x*(0.18 if windup else (-0.35 if releasing else -0.08))
 			position.y+=0.12 if windup else 0.0
-

@@ -67,3 +67,53 @@ $rigResult | Write-Output
 if ($rigExit -ne 0 -or ($rigResult -join "`n") -notmatch 'RIG RESULT: 57 checks, 0 failures' -or ($rigResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
     throw '3D character and enemy rig checks failed.'
 }
+# Ember snapshots require the real renderer to bake the current skin pose.
+$emberResult = & $engine --path $projectRoot --script tests/ember_regression.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1200 2>&1
+$emberExit = $LASTEXITCODE
+$emberResult | Write-Output
+if ($emberExit -ne 0 -or ($emberResult -join "`n") -notmatch 'EMBER RESULT: 8 checks, 0 failures' -or ($emberResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw 'Ember pose snapshots, flame wake and cleanup checks failed.'
+}
+
+$ironbarkResult = & $engine --path $projectRoot --script tests/ironbark_regression.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1200 2>&1
+$ironbarkExit = $LASTEXITCODE
+$ironbarkResult | Write-Output
+if ($ironbarkExit -ne 0 -or ($ironbarkResult -join "`n") -notmatch 'IRONBARK RESULT: 10 checks, 0 failures' -or ($ironbarkResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw 'Ironbark streak, leaf, piercing-impact and cleanup checks failed.'
+}
+
+$remainingResult = & $engine --path $projectRoot --script tests/remaining_power_regression.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1200 2>&1
+$remainingExit = $LASTEXITCODE
+$remainingResult | Write-Output
+if ($remainingExit -ne 0 -or ($remainingResult -join "`n") -notmatch 'REMAINING POWERS RESULT: 17 checks, 0 failures' -or ($remainingResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw 'Spore growth, Sanctuary healing and status-lifetime checks failed.'
+}
+
+$overlapResult = & $engine --path $projectRoot --script tests/all_power_smoke.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1800 2>&1
+$overlapExit = $LASTEXITCODE
+$overlapResult | Write-Output
+if ($overlapExit -ne 0 -or ($overlapResult -join "`n") -notmatch 'cleanup=true; failures=0' -or ($overlapResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw 'Repeated four-player power overlap and cleanup checks failed.'
+}
+
+$uiResult = & $engine --path $projectRoot --script tests/ui_regression.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1200 2>&1
+$uiExit = $LASTEXITCODE
+$uiResult | Write-Output
+if ($uiExit -ne 0 -or ($uiResult -join "`n") -notmatch 'UI RESULT: 24 checks, 0 failures' -or ($uiResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw 'Gnomish menu navigation, transparency and responsive layout checks failed.'
+}
+
+$mixamoResult = & $engine --path $projectRoot --script tests/mixamo_regression.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1200 2>&1
+$mixamoExit = $LASTEXITCODE
+$mixamoResult | Write-Output
+if ($mixamoExit -ne 0 -or ($mixamoResult -join "`n") -notmatch 'MIXAMO RESULT: 56 checks, 0 failures' -or ($mixamoResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw 'Mixamo loops, smooth playback, casting and grip checks failed.'
+}
+
+
+$castResult = & $engine --path $projectRoot --script tests/cast_sync_regression.gd --fixed-fps 60 --position -2000,-2000 --quit-after 1800 2>&1
+$castExit = $LASTEXITCODE
+$castResult | Write-Output
+if ($castExit -ne 0 -or ($castResult -join "`n") -notmatch 'CAST SYNC RESULT: 60 checks, 0 failures' -or ($castResult -join "`n") -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)') {
+    throw 'Casting animation, release timing, interruption and lighting checks failed.'
+}

@@ -1,4 +1,5 @@
 extends Control
+const UI=preload("res://scripts/gnomish_ui.gd")
 ## Fifty generated, articulated poses with the approved stop-motion timing.
 signal replay_requested
 signal quit_requested
@@ -12,6 +13,7 @@ var manual_time := -1.0
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	theme=UI.theme()
 	mouse_filter=Control.MOUSE_FILTER_STOP
 	process_mode=Node.PROCESS_MODE_ALWAYS
 	replay=Button.new();replay.text="PLAY AGAIN";replay.pressed.connect(func(): replay_requested.emit())
@@ -19,9 +21,6 @@ func _ready() -> void:
 	for b in [replay,exit_button]:
 		add_child(b)
 		b.add_theme_font_size_override("font_size",16)
-		var style:=StyleBoxFlat.new();style.bg_color=Color("3c5147");style.border_color=Color("b38c45");style.set_border_width_all(2);style.set_corner_radius_all(7)
-		b.add_theme_stylebox_override("normal",style)
-		var hover:=style.duplicate();hover.bg_color=Color("5b7054");b.add_theme_stylebox_override("hover",hover)
 
 func open() -> void:
 	elapsed=0.0;show();replay.grab_focus()
@@ -45,25 +44,21 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 func words(text: String, y: float, font_size: int, color: Color) -> void:
-	draw_string(ThemeDB.fallback_font,Vector2(280,y),text,HORIZONTAL_ALIGNMENT_CENTER,720,font_size,color)
+	draw_string(UI.HEADING if font_size>=22 else UI.body(),Vector2(280,y),text,HORIZONTAL_ALIGNMENT_CENTER,720,font_size,color)
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO,size),Color(0.025,.04,.045,1.0))
+	draw_rect(Rect2(Vector2.ZERO,size),Color(0.025,.04,.045,.55))
 	var factor:=minf(size.x/1280.0,size.y/720.0)
 	draw_set_transform((size-Vector2(1280,720)*factor)*.5,0,Vector2.ONE*factor)
 	var t:=manual_time if manual_time>=0.0 else elapsed
 	var unfold:=smoothstep(0.0,.65,t)
 	var paper:=Rect2(260,350-280*unfold,760,560*unfold)
 	draw_style_box(parchment(),paper)
-	for y in [paper.position.y,paper.end.y]:
-		draw_style_box(roller(),Rect2(240,y-13,800,26))
-		for x in [240,1040]:
-			draw_circle(Vector2(x,y),17,Color("75552f"));draw_circle(Vector2(x,y),10,Color("dcb871"))
 	if unfold<.99: return
 	draw_rect(Rect2(282,94,716,512),Color("b99b65"),false,1.0)
-	words("THE GNOME PEAR CLUB",127,15,Color("7d6744"))
-	words("THE CISTERN IS SAVED!",169,34,Color("354a40"))
-	words("Both realms restored. A golden victory for your party.",202,17,Color("695738"))
+	words("THE GNOME PEAR CLUB",146,15,Color("7d6744"))
+	words("THE CISTERN IS SAVED!",183,34,Color("354a40"))
+	words("Both realms restored. A golden victory for your party.",211,17,Color("695738"))
 	# All particles are periodic, with zero alpha at each wrap.
 	for i in 38:
 		var p:=fposmod(t/LOOP_SECONDS+float(i)/38.0,1.0)
@@ -87,9 +82,8 @@ func _draw() -> void:
 	words("MARIA CHEERS FOR YOU!",532,22,Color("684663"))
 	words("A little joy. A big adventure. Thank you for playing.",554,14,Color("786347"))
 
-func parchment() -> StyleBoxFlat:
-	var s:=StyleBoxFlat.new();s.bg_color=Color("eee0b9");s.border_color=Color("be9959");s.set_border_width_all(3);s.set_corner_radius_all(8);s.shadow_color=Color(0,0,0,.4);s.shadow_size=20
-	return s
+func parchment() -> StyleBox:
+	return UI.scroll()
 
 func roller() -> StyleBoxFlat:
 	var s:=StyleBoxFlat.new();s.bg_color=Color("d0ad6d");s.border_color=Color("9f7941");s.set_border_width_all(2);s.set_corner_radius_all(12)

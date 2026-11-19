@@ -1,4 +1,5 @@
-param([switch]$PowerFX,[switch]$KeyboardCoop,[switch]$MagicSequence,[switch]$LevelTwo,[switch]$Celebration,[switch]$StudioVFX,[switch]$DynamicMaria,[switch]$RigOverhaul)
+param([switch]$PowerFX,[switch]$KeyboardCoop,[switch]$MagicSequence,[switch]$LevelTwo,[switch]$Celebration,[switch]$StudioVFX,[switch]$DynamicMaria,[switch]$RigOverhaul,[switch]$CastSync)
+if($CastSync){$RigOverhaul=$true}
 if($RigOverhaul){$DynamicMaria=$true}
 if($DynamicMaria){$StudioVFX=$true}
 if($StudioVFX){$Celebration=$true}
@@ -13,6 +14,7 @@ if($Celebration){$folder=Join-Path $projectRoot 'builds/Celebration-Playtest'}
 if($StudioVFX){$folder=Join-Path $projectRoot 'builds/Studio-VFX-Playtest'}
 if($DynamicMaria){$folder=Join-Path $projectRoot 'builds/Dynamic-Maria-Playtest'}
 if($RigOverhaul){$folder=Join-Path $projectRoot 'builds/3D-Overhaul-Playtest'}
+if($CastSync){$folder=Join-Path $projectRoot 'builds/Cast-Sync-Playtest'}
 New-Item -ItemType Directory -Force $folder | Out-Null
 $engine=Join-Path $PSScriptRoot 'godot/Godot_v4.7.2-stable_win64_console.exe'
 $log=Join-Path $projectRoot $(if($LevelTwo){'artifacts/level-two/export.log'}elseif($MagicSequence){'artifacts/magic-sequence/export.log'}elseif($KeyboardCoop){'artifacts/keyboard-coop/export.log'}elseif($PowerFX){'artifacts/power-fx-v3/export.log'}else{'artifacts/art-upgrade/export.log'})
@@ -220,6 +222,42 @@ if($RigOverhaul){
  Add-Content (Join-Path $folder 'README.txt') "`n3D OVERHAUL: Four realm combatants now use shared 52-bone 3D rigs. Universal joins them in Watch-Battle-Rigs.cmd. All four Atlas enemies and the rear-hinged chest are integrated. Player animation uses a 12-pose-per-second cadence."
  $files=Get-ChildItem -LiteralPath $folder -File | Where-Object Name -ne 'manifest.json'
 }
+if($CastSync){
+ @'
+DARK FOREST GAUNTLET - SYNCHRONIZED MAGIC - NOVEMBER 18, 2026
+
+Extract this entire ZIP, then open Play.cmd or Play-Keyboard-Coop.cmd.
+Open Watch-Powers.cmd for real four-gnome casting, or Watch-Battle-Rigs.cmd
+for all five models and their Mixamo walk/run/cast clips.
+
+Realm powers charge in the hands and release at the 1.2-second forward
+thrust of Standing 2H Magic Attack 01. The full animation lasts 2.7 seconds.
+Movement remains available while charging; facing locks toward the chosen
+target. Basic attacks wait until release and can interrupt recovery.
+Taking damage cancels an unreleased spell, with a short .75-second retry
+cooldown. Downing or ending the encounter cancels all pending magic.
+Damage, healing, projectiles and the release light share the same marker.
+Ember's landing explosion still happens when its dash actually finishes.
+
+P1: WASD / F attack / G power / Q switch / E revive.
+P2: arrows / J attack / K power / L switch / U revive.
+Esc opens pause/settings. The solo mode also supports Space/Shift.
+Both levels, upgraded power art, Gnomish UI and Maria's celebration included.
+Faces and cloth use their existing assets.
+
+Windows x64, OpenGL 3.3. No Godot installation needed.
+This package uses Godot's editor-runtime with an exported data pack.
+Third-party licenses and source receipts accompany the game.
+'@ | Set-Content (Join-Path $folder 'README.txt')
+ Copy-Item -LiteralPath (Join-Path $projectRoot 'assets/characters/gnomes/rigged/mixamo-motion-receipt.json') -Destination $folder
+ foreach($suite in @('cast_sync_regression','mixamo_regression')){
+  $probe=Join-Path $projectRoot "artifacts/cast-sync/packaged-$suite.log"
+  & $engine --main-pack (Join-Path $folder 'DarkForestGauntlet.pck') --script (Join-Path $projectRoot "tests/$suite.gd") --fixed-fps 60 --position -2000,-2000 --quit-after 1800 *> $probe
+  if($LASTEXITCODE -ne 0 -or (Get-Content $probe -Raw) -notmatch 'RESULT: .* checks, 0 failures' -or (Get-Content $probe -Raw) -match '(SCRIPT ERROR|SHADER ERROR|ERROR:)'){throw "Packaged $suite failed"}
+  Copy-Item -LiteralPath $probe -Destination $folder
+ }
+ $files=Get-ChildItem -LiteralPath $folder -File | Where-Object Name -ne 'manifest.json'
+}
 $manifest=@($files | ForEach-Object { @{file=$_.Name;bytes=$_.Length;sha256=(Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower()} })
 $manifest | ConvertTo-Json -Depth 4 | Set-Content (Join-Path $folder 'manifest.json')
 $archive=Join-Path $projectRoot $(if($LevelTwo){'builds/Dark-Forest-Gauntlet-Level-Two.zip'}elseif($MagicSequence){'builds/Dark-Forest-Gauntlet-Magic-Sequence.zip'}elseif($KeyboardCoop){'builds/Dark-Forest-Gauntlet-Keyboard-Coop.zip'}elseif($PowerFX){'builds/Dark-Forest-Gauntlet-Power-FX-v3.zip'}else{'builds/Dark-Forest-Gauntlet-Moonlit-Ruins.zip'})
@@ -227,6 +265,7 @@ if($Celebration){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-Ce
 if($StudioVFX){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-Studio-VFX.zip'}
 if($DynamicMaria){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-Dynamic-Maria.zip'}
 if($RigOverhaul){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-3D-Overhaul.zip'}
+if($CastSync){$archive=Join-Path $projectRoot 'builds/Dark-Forest-Gauntlet-Cast-Sync-Windows.zip'}
 Compress-Archive -Path (Join-Path $folder '*') -DestinationPath $archive -Force
 $zip=[IO.Compression.ZipFile]::OpenRead($archive)
 try {

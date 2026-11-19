@@ -12,3 +12,5 @@ reference/*
 !reference/.gdignore
 Character Sprites/*
 !Character Sprites/.gdignore
+
+tools/font-deps/

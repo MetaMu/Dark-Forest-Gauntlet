@@ -1,0 +1,295 @@
+{
+  "created": "2026-11-18",
+  "method": "Existing 52-bone skins; documented Mixamo FBX retarget, hip smoothing with ankle-path preservation, 60 fps bake",
+  "models": [
+    {
+      "id": "universal",
+      "source_sha256": "98a3d09360559e19202b6653d5d81b1299eb3dc5ef68ea41f619a6641e199738",
+      "clips": {
+        "Walk": {
+          "duration": 1.0,
+          "frames": 61,
+          "stride_model_units": 0.4218140244483948,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\mixamo-walk-source\\Mixamo-Walking-Swagger-InPlace-24fps.fbx",
+          "source_sha256": "2e16c41b4364d48d542d70948ba29c9af49a7a927d4d9dc312d5de5918c37006",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            25.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0034095323644578457,
+          "max_reach_clamp": 0.001450093638711042
+        },
+        "Run": {
+          "duration": 0.7083333333333334,
+          "frames": 43,
+          "stride_model_units": 0.4800518322736025,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\walk-run-v7\\Mixamo-Running-With-Intention-24fps.fbx",
+          "source_sha256": "caa9993c921e6f1a1d050ebd8ffade87c99df11b2f0cab859c8fab1af265e87a",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            18.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0870954841375351,
+          "max_reach_clamp": 0
+        },
+        "Cast": {
+          "duration": 2.7,
+          "frames": 163,
+          "stride_model_units": 0.1659761667251587,
+          "source": "D:\\Gnome Pear Club Visualizers\\01 - Working Projects\\lonely-lily-studios-ark-build-timelapse\\assets\\Motion-Packs\\Magic-Spell-Pack\\Standing 2H Magic Attack 01.fbx",
+          "source_sha256": "e0656d2a70e3db3e12eb8513ab91ea93300e5bd4f99c97731b482b7e575055fd",
+          "source_fps": 30,
+          "source_frames": [
+            1.0,
+            82.0
+          ],
+          "sole_min": 0.0019997581839561462,
+          "sole_max": 0.0020004622638225555,
+          "max_reach_clamp": 0
+        }
+      },
+      "sha256": "2c653191b96b0fe18318016826dfcea6dea0a052393e86efcb8cb1d702c239d9"
+    },
+    {
+      "id": "ember_hollow",
+      "source_sha256": "0c08efb7378c7549f47af139e095086c6de662040de96aa42e978f1c84c42aa1",
+      "clips": {
+        "Walk": {
+          "duration": 1.0,
+          "frames": 61,
+          "stride_model_units": 0.4218140244483948,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\mixamo-walk-source\\Mixamo-Walking-Swagger-InPlace-24fps.fbx",
+          "source_sha256": "2e16c41b4364d48d542d70948ba29c9af49a7a927d4d9dc312d5de5918c37006",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            25.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0034095323644578457,
+          "max_reach_clamp": 0.001450093638711042
+        },
+        "Run": {
+          "duration": 0.7083333333333334,
+          "frames": 43,
+          "stride_model_units": 0.4800518322736025,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\walk-run-v7\\Mixamo-Running-With-Intention-24fps.fbx",
+          "source_sha256": "caa9993c921e6f1a1d050ebd8ffade87c99df11b2f0cab859c8fab1af265e87a",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            18.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0870954841375351,
+          "max_reach_clamp": 0
+        },
+        "Cast": {
+          "duration": 2.7,
+          "frames": 163,
+          "stride_model_units": 0.1659761667251587,
+          "source": "D:\\Gnome Pear Club Visualizers\\01 - Working Projects\\lonely-lily-studios-ark-build-timelapse\\assets\\Motion-Packs\\Magic-Spell-Pack\\Standing 2H Magic Attack 01.fbx",
+          "source_sha256": "e0656d2a70e3db3e12eb8513ab91ea93300e5bd4f99c97731b482b7e575055fd",
+          "source_fps": 30,
+          "source_frames": [
+            1.0,
+            82.0
+          ],
+          "sole_min": 0.0019997581839561462,
+          "sole_max": 0.0020004622638225555,
+          "max_reach_clamp": 0
+        }
+      },
+      "sha256": "503eee6469110953353e65db08353509e5f5c18a83310b02eff29eb143274d50"
+    },
+    {
+      "id": "ironbark",
+      "source_sha256": "fe28db0135cc80396c7f115d9ce3fac02020c0c841a3e678873efa8a2d6a42af",
+      "clips": {
+        "Walk": {
+          "duration": 1.0,
+          "frames": 61,
+          "stride_model_units": 0.4218140244483948,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\mixamo-walk-source\\Mixamo-Walking-Swagger-InPlace-24fps.fbx",
+          "source_sha256": "2e16c41b4364d48d542d70948ba29c9af49a7a927d4d9dc312d5de5918c37006",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            25.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0034095323644578457,
+          "max_reach_clamp": 0.001450093638711042
+        },
+        "Run": {
+          "duration": 0.7083333333333334,
+          "frames": 43,
+          "stride_model_units": 0.4800518322736025,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\walk-run-v7\\Mixamo-Running-With-Intention-24fps.fbx",
+          "source_sha256": "caa9993c921e6f1a1d050ebd8ffade87c99df11b2f0cab859c8fab1af265e87a",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            18.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0870954841375351,
+          "max_reach_clamp": 0
+        },
+        "Cast": {
+          "duration": 2.7,
+          "frames": 163,
+          "stride_model_units": 0.1659761667251587,
+          "source": "D:\\Gnome Pear Club Visualizers\\01 - Working Projects\\lonely-lily-studios-ark-build-timelapse\\assets\\Motion-Packs\\Magic-Spell-Pack\\Standing 2H Magic Attack 01.fbx",
+          "source_sha256": "e0656d2a70e3db3e12eb8513ab91ea93300e5bd4f99c97731b482b7e575055fd",
+          "source_fps": 30,
+          "source_frames": [
+            1.0,
+            82.0
+          ],
+          "sole_min": 0.0019997581839561462,
+          "sole_max": 0.0020004622638225555,
+          "max_reach_clamp": 0
+        }
+      },
+      "sha256": "7d4aae8c1d0d9fe2ed9164def119ab158bbbd288563d3c4983aff1f99197adbf"
+    },
+    {
+      "id": "spore_grove",
+      "source_sha256": "579b651ad4139eac2f81144d34f15897c424304f2da73fda53acb4e9846c0a12",
+      "clips": {
+        "Walk": {
+          "duration": 1.0,
+          "frames": 61,
+          "stride_model_units": 0.4218140244483948,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\mixamo-walk-source\\Mixamo-Walking-Swagger-InPlace-24fps.fbx",
+          "source_sha256": "2e16c41b4364d48d542d70948ba29c9af49a7a927d4d9dc312d5de5918c37006",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            25.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0034095323644578457,
+          "max_reach_clamp": 0.001450093638711042
+        },
+        "Run": {
+          "duration": 0.7083333333333334,
+          "frames": 43,
+          "stride_model_units": 0.4800518322736025,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\walk-run-v7\\Mixamo-Running-With-Intention-24fps.fbx",
+          "source_sha256": "caa9993c921e6f1a1d050ebd8ffade87c99df11b2f0cab859c8fab1af265e87a",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            18.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0870954841375351,
+          "max_reach_clamp": 0
+        },
+        "Cast": {
+          "duration": 2.7,
+          "frames": 163,
+          "stride_model_units": 0.1659761667251587,
+          "source": "D:\\Gnome Pear Club Visualizers\\01 - Working Projects\\lonely-lily-studios-ark-build-timelapse\\assets\\Motion-Packs\\Magic-Spell-Pack\\Standing 2H Magic Attack 01.fbx",
+          "source_sha256": "e0656d2a70e3db3e12eb8513ab91ea93300e5bd4f99c97731b482b7e575055fd",
+          "source_fps": 30,
+          "source_frames": [
+            1.0,
+            82.0
+          ],
+          "sole_min": 0.0019997581839561462,
+          "sole_max": 0.0020004622638225555,
+          "max_reach_clamp": 0
+        }
+      },
+      "sha256": "f86ff79c29389b81d461e3f24aa4b190bf0f980afb90dc4903d0a1ad1ffa10a5"
+    },
+    {
+      "id": "light_realm",
+      "source_sha256": "90ae33e0bf7629d306a83f3f63271fb414dfe213dd13d4367601a1cb439a2885",
+      "clips": {
+        "Walk": {
+          "duration": 1.0,
+          "frames": 61,
+          "stride_model_units": 0.4218140244483948,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\mixamo-walk-source\\Mixamo-Walking-Swagger-InPlace-24fps.fbx",
+          "source_sha256": "2e16c41b4364d48d542d70948ba29c9af49a7a927d4d9dc312d5de5918c37006",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            25.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0034095323644578457,
+          "max_reach_clamp": 0.001450093638711042
+        },
+        "Run": {
+          "duration": 0.7083333333333334,
+          "frames": 43,
+          "stride_model_units": 0.4800518322736025,
+          "source": "C:\\Users\\rosec\\OneDrive\\Documents\\GLB Refresher Tool\\local-assets\\garbage-friends-animation\\walk-run-v7\\Mixamo-Running-With-Intention-24fps.fbx",
+          "source_sha256": "caa9993c921e6f1a1d050ebd8ffade87c99df11b2f0cab859c8fab1af265e87a",
+          "source_fps": 24,
+          "source_frames": [
+            1.0,
+            18.0
+          ],
+          "sole_min": 0.0019999444484710693,
+          "sole_max": 0.0870954841375351,
+          "max_reach_clamp": 0
+        },
+        "Cast": {
+          "duration": 2.7,
+          "frames": 163,
+          "stride_model_units": 0.1659761667251587,
+          "source": "D:\\Gnome Pear Club Visualizers\\01 - Working Projects\\lonely-lily-studios-ark-build-timelapse\\assets\\Motion-Packs\\Magic-Spell-Pack\\Standing 2H Magic Attack 01.fbx",
+          "source_sha256": "e0656d2a70e3db3e12eb8513ab91ea93300e5bd4f99c97731b482b7e575055fd",
+          "source_fps": 30,
+          "source_frames": [
+            1.0,
+            82.0
+          ],
+          "sole_min": 0.0019997581839561462,
+          "sole_max": 0.0020004622638225555,
+          "max_reach_clamp": 0
+        }
+      },
+      "sha256": "6929157e6f3d0771a373f0394e1d9c0f7b0c0fc8cd1fea0bbbd7da07e9508b1f"
+    }
+  ],
+  "runtime": "Smooth distance-based locomotion; moving cast lower-body layer; palm grip and casting back socket",
+  "limitations": [
+    "No facial speech/blink or cloth simulation added",
+    "Existing attack clips retained",
+    "Runtime finger/socket corrections are in gnome_rig.gd",
+    "Separate Swagger export; missing original Giddy file was not substituted silently"
+  ],
+  "validation": {
+    "checks_passed": 432,
+    "suites": 16,
+    "four_player_power_smoke": "passed",
+    "blender_pose_review": "front and side walk/run/cast",
+    "grip_review": "front, side and back at walk/run/attack samples",
+    "video": "Gnome-Mixamo-Movement-Review.mp4",
+    "video_frames": 450,
+    "video_fps": 30,
+    "video_seconds": 15,
+    "video_sha256": "c598fcc2a15a2fd534e75d38c0bf0f62fa22c7938be045935fbb6373bf3e6ba3",
+    "full_video_decode_errors": 0
+  },
+  "casting": {
+    "clip": "Standing 2H Magic Attack 01",
+    "release_seconds": 1.2,
+    "duration_seconds": 2.7,
+    "authority": "player.advance_cast physics clock",
+    "charge": "hand-attached energy and light",
+    "interruptions": "damage, downing, class change and encounter finish cancel unreleased spells",
+    "cooldown_after_interruption_seconds": 0.75
+  }
+}

@@ -152,6 +152,7 @@ func finish(result: State) -> void:
 	state = result
 	for player in room.players:
 		player.combat_enabled = false
+		player.cancel_cast()
 		player.velocity = Vector3.ZERO
 		player.set_physics_process(false)
 

@@ -56,6 +56,7 @@ func stage(focus_class: int=-1, offset: Vector3=Vector3.ZERO) -> void:
 func loop_capture(index: int, file: String) -> void:
 	await stage(index)
 	room.players[index].try_power()
+	await tick(72)
 	await tick(([18,14,10,8] if "--studio-review" in OS.get_cmdline_user_args() else [18,6,10,8])[index])
 	await save(file)
 	await tick(45)
@@ -93,7 +94,7 @@ func run() -> void:
 			if i==27: room.players[3].try_power()
 			await tick(1)
 			if not demo:
-				if i==33: await save("05_all_four")
+				if i==105: await save("05_all_four")
 				if i%5==0:
 					await save("frames/cast_%03d" % frames_written)
 					frames_written+=1
@@ -101,7 +102,7 @@ func run() -> void:
 	if not demo:
 		await stage(-1,Vector3(-8,0,0))
 		for player in room.players: player.try_power()
-		await tick(16);await save("06_dark_ground")
+		await tick(88);await save("06_dark_ground")
 		room.free();await tick(5)
 		print("FOUR CLASS VFX SHOWCASE COMPLETE")
 		quit()
